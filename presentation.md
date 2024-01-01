@@ -38,7 +38,6 @@ style: |
 _paginate: hide
 _header: ''
 _footer: ''
-TODO: Vortragsnotizen machen
 -->
 # Umweltbelastung von Moderner Mobilkommunikation
 
@@ -391,7 +390,7 @@ Hier fehlen verlässliche, also einheitliche Zahlen, UE, und Trasmit-Power/Power
 1. Antennensystem
 2. RRU (Remote Radio Unit)
 3. BBU (Baseband Unit)
-4. Physical support (Stromversorgungssystem, Backup-Batterieen, transmittion equipment, air conditioning)
+4. Physical support (Stromversorgungssystem, Backup-Batterieen, Transmittion Equipment, Air Conditioning)
 
 In 5G: RRU und Antennensysteme sind Active Antenna Units (AAU) und BBUs sind Centralized Units (CU) und Distributed (DU).
 
@@ -401,8 +400,15 @@ In 5G: RRU und Antennensysteme sind Active Antenna Units (AAU) und BBUs sind Cen
 Stattdessen können wir uns darüber unterhalten, aus welchen Bauteilen eine Base Station besteht:
 
 1. Antennensystem: für Laien und uns verständlich
-2. RRU (Remote Radio Unit): 
-3. BBU (Baseband Unit): 
+2. RRU (Remote Radio Unit): Transceiver zwischen BBU & Antennen
+3. BBU (Baseband Unit): verarbeitet Basisbandsignale von und zur Übertragung auf einer Frequenz, a.k.a. Modulation
+4. Rest, um alles am Laufen zu halten
+  1. Stromanschluss
+  2. Batterien
+  3. Transmission Equipment (Kabel, Adapter, nicht-usergerichtete Ausrüstung etc.)
+  4. Kühlung
+
+In 5G sind wegen der Veränderungen der Begriffe und der Feingranularität der Standorte oft RRU und Antennen zusammengefasst in AAU und BBUs aufgeteilt in Centralized Units abseits der Base Station und Distributed Units, lokal nahe am Mast sind.
 -->
 
 ---
@@ -414,10 +420,23 @@ Stattdessen können wir uns darüber unterhalten, aus welchen Bauteilen eine Bas
 |                            | volle Leistung | Idle     | Deep Sleep |
 | -------------------------- | -------------- | -------- | ---------- |
 | Active Antenna Units (AAU) | 1130-1180W     | 635-665W | 150-200W   |
-| Baseband Units (BBU)       | 295-325W       | 295-320W | 150-320W   |
+| Baseband Units (BBU)       | 295-325W       | 295-320W | 295-320W   |
 | Air Conditioning           | 1740W          | 1740W    | 1740W      |
 
 <!-- _footer: '["Remake Green 5G, Mobile Innovation for Climate Action", China Telecom and ZTE, https://www.zte.com.cn/content/dam/zte-site/res-www-zte-com-cn/white_paper/Remake_Green_5G.pdf](https://www.zte.com.cn/content/dam/zte-site/res-www-zte-com-cn/white_paper/Remake_Green_5G.pdf)' -->
+
+<!-- 
+Was davon verbraucht viel Strom?
+
+In der Tabelle sehen wir, dass die BBU vergleichsweise wenig verbrauchen und AAU, sowie Air Conditioning am meisten Stromverbrauch haben.
+
+Besonders interessant: Leistungsunterschied bei AAUs zwischen voller Leistung, Idle Modus und Deep Sleep
+-> ca. 85% Einsparung
+
+BBUs und Air Conditioning sind im Deep Sleep Modus der absolute Killer mit schlichtweg keiner Einsparung
+
+[Wahrscheinlich nicht 100% wahre Zahlen, aber wir wahrscheinlich wahr: Micro Sleep ist bei AC nicht möglich]
+-->
 
 ---
 
@@ -425,41 +444,27 @@ Stattdessen können wir uns darüber unterhalten, aus welchen Bauteilen eine Bas
 
 <!-- _footer: '["Remake Green 5G, Mobile Innovation for Climate Action", China Telecom and ZTE, https://www.zte.com.cn/content/dam/zte-site/res-www-zte-com-cn/white_paper/Remake_Green_5G.pdf](https://www.zte.com.cn/content/dam/zte-site/res-www-zte-com-cn/white_paper/Remake_Green_5G.pdf)' -->
 
+<!-- 
+Hier sehen wir nochmal die Leistung nach Traffic Load etwas feingranularer.
+
+[Hinweis auf den relativ kleinen Sprung bei AAU von 100% auf 50% Traffic Load]
+ -->
+
 ---
 
 # 4. Wie kann eingespart werden?​
 
-1. Sidelink enhancements
-2. Giga-MIMO
-3. NR-Light
-4. Lower Transmit Power for IoT devices (Reduced Capability NR)
+1. Giga-MIMO
+2. NR-Light
+3. Lower Transmit Power for IoT devices (Reduced Capability NR)
+4. Sidelink enhancements
 5. Sleep Modes
 
----
+<!-- 
+Jetzt haben wir uns mal etwas intensiver angeschaut, wieviel unsere Hardware denn verbraucht, dann schauen wir mal drauf, was wir mit Controllern und Software generell oder cleveren Alternativen anrichten können, um die Verbrauchszahlen noch etwas zu drücken.
 
-## NR Sidelink
-
-- basiert auf LTE Sidelink
-- Device-to-Device (D2D) Kommunikation
-- Distributed Networking - "Distributed Base Stations"
-
-<!-- _footer: '["How will sidelink bring a new level of 5G versatility?", Qualcomm, 08.09.2022, https://www.qualcomm.com/news/onq/2022/09/how-will-sidelink-bring-a-new-level-of-5g-versatility](https://www.qualcomm.com/news/onq/2022/09/how-will-sidelink-bring-a-new-level-of-5g-versatility)' -->
-
----
-
-![center](https://s7d1.scene7.com/is/image/dmqualcommprod/Picture3-2?$QC_Responsive$&fmt=png-alpha&wid=640)
-
-<!-- _footer: '["How will sidelink bring a new level of 5G versatility?", Qualcomm, 08.09.2022, https://www.qualcomm.com/news/onq/2022/09/how-will-sidelink-bring-a-new-level-of-5g-versatility](https://www.qualcomm.com/news/onq/2022/09/how-will-sidelink-bring-a-new-level-of-5g-versatility)' -->
-
----
-
-### Verbesserungen durch NR Sidelink
-
-- Erhöhte (Sidelink-)Reichweite
-- Vergrößerte Kapazität
-- Data Offload
-
-<!-- _footer: '["How will sidelink bring a new level of 5G versatility?", Qualcomm, 08.09.2022, https://www.qualcomm.com/news/onq/2022/09/how-will-sidelink-bring-a-new-level-of-5g-versatility](https://www.qualcomm.com/news/onq/2022/09/how-will-sidelink-bring-a-new-level-of-5g-versatility)' -->
+Dafür werde ich über diese 5 Themen in unterschiedlicher Ausführung drüber gehen und etwas dazu sagen, was das Ziel ist und wofür es genutzt werden kann.
+ -->
 
 ---
 
@@ -473,6 +478,21 @@ Stattdessen können wir uns darüber unterhalten, aus welchen Bauteilen eine Bas
 
 *pot. weitere Verbesserungen in 6G*
 
+<!-- 
+[Frage, wer eine generelle Erklärung von Giga-MIMO braucht]
+
+Giga MiMO ist in der Liste, nicht weil es dazu führt, dass der Gesamtverbrauch stark gesenkt wird, sondern weil es die insgesamte Effizenz der Base Station besser macht.
+
+- Größe Kapazität an Daten und Verbindungen bringt mehr "Bang for the Buck"
+- Längere Batterielebenszeit, weil die Ladung der Batterie seltener ausgereizt wird, wenn wir Antennen gezielt an- und ausschalten. Batterien werden seltener vollständig entladen.
+
+---
+
+In 6G ist außerdem das Ziel ausgesprochen, dass Giga MIMO noch stärker genutzt und verbessert werden soll, was in unserem Kontext ja bloß positiv sein kann.
+
+TODO: mehr Infos
+-->
+
 ---
 
 ##  NR-Light
@@ -481,6 +501,23 @@ Stattdessen können wir uns darüber unterhalten, aus welchen Bauteilen eine Bas
 - Geringere Komplexität <small style="color: grey;">(150Mbps DL / 50 Mbps UL, 13-30ms latency)</small>
 - Geringerer Stromverbrauch
 
+<!-- 
+Wer gedacht hat, dass wir ohnehin schon viele Standards und Kommunikationsvarianten haben, darf sich jetzt freuen.
+
+[Wer hat schon von NR-Light gehört?]
+
+Basically, NR-Light ist die kleine Schwester von 5G NR und bringt weniger Kapazität, weniger Komplexität und dadurch einen geringeren Stromverbrauch.
+
+Man kann sich vorstellen, weniger oder weniger gute Hardware mit all den Software-Spielereien und technologischen Tricks, die wir haben.
+
+Die Eckdaten für Nutzer sind hier
+- max. 150 Mbps DL
+- max. 50 Mbps UL
+- 13-30 ms Latency
+
+[besser als mein W-Lan zuhause]
+-->
+
 ---
 
 ##  Reduced Capability (RedCap) NR
@@ -488,6 +525,16 @@ Stattdessen können wir uns darüber unterhalten, aus welchen Bauteilen eine Bas
 ![h:450 center](https://www.ericsson.com/cdn-cgi/image/format=auto,fit=scale-down,width=1440/491c72/assets/global/qbank/2021/02/16/redcap-table-2_grey-1287614e7eeaaed91a08c2fa13b5f81d38ad5f.jpg)
 
 <!-- 
+Genau da, bei Abgeschwächten Versionen, machen wir jetzt weiter, namentlich mit Reduced Capability, RedCap, NR.
+
+Wir sehen hier den Vergleich von 2021 von einem Baseline Device, das ein vollumfängliches User Equipment ist, und einem RedCap Device auf je 2 Frequency Ranges, welche habe ich nicht mehr im Kopf.
+
+- Geringere genutzte Bandbreite
+- Weniger Antennen
+- Weniger Downlink MIMO layer (Verbindung zu Device Receive Branches)
+- Kleinere Konstellationsmatrizen für Modulierung
+- Geringere Duplexfunktionalität
+
 FDD: Frequency Division Duplex
 TDD: Time Division Duplex
  -->
@@ -502,6 +549,23 @@ TDD: Time Division Duplex
 
 <!-- _footer: '["What is reduced capability (RedCap) NR and what will it achieve?", Ericsson, 11.02.2021, https://www.ericsson.com/en/blog/2021/2/reduced-cap-nr](https://www.ericsson.com/en/blog/2021/2/reduced-cap-nr)' -->
 
+<!-- 
+[Graphische Darstellung von Kommunikation eines RedCapUE und eines Legacy UE]
+
+QAM: Quadrature amplitude modulation
+ -->
+
+---
+
+##  Reduced Capability (RedCap) NR
+
+![h:450 center](https://upload.wikimedia.org/wikipedia/commons/9/90/QAM16_Demonstration.gif)
+<p style="text-align: center"><em>Quadrature amplitude modulation</em></p>
+
+<!-- 
+[Darstellung von QAM: Aus Phase und Amplitude 4 Bits]
+ -->
+
 ---
 
 ##  Reduced Capability (RedCap) NR
@@ -513,12 +577,68 @@ TDD: Time Division Duplex
 
 <!-- _footer: '["What is reduced capability (RedCap) NR and what will it achieve?", Ericsson, 11.02.2021, https://www.ericsson.com/en/blog/2021/2/reduced-cap-nr](https://www.ericsson.com/en/blog/2021/2/reduced-cap-nr)' -->
 
+<!-- 
+Aus diesem technischen Schritt, den das UE entscheiden kann können wir die Ressourcen, die wir haben in kleinere Stücke für mehr Geräte und Verbindungen teilen.
+
+Wir haben also
+- Geringere Bandbreite (20-100 MHz)
+- Geringere Anzahl an Receive Antennen
+- Kleinere Konstellationsmatrizen für Modulierung
+- Optionaler Duplex
+ -->
+
 ---
 
-## Sleep Modes
+## NR Sidelink
 
-![h:500 center](bilder/SleepModeSwitching.png)
-<!-- _footer: Dynamic gNodeB Sleep Control for Energy-Conserving 5G Radio Access Network; Pengfei Shen et al., 13.07.2022 -->
+- basiert auf LTE Sidelink
+- Device-to-Device (D2D) Kommunikation
+- Distributed Networking - "Distributed Base Stations"
+
+<!-- _footer: '["How will sidelink bring a new level of 5G versatility?", Qualcomm, 08.09.2022, https://www.qualcomm.com/news/onq/2022/09/how-will-sidelink-bring-a-new-level-of-5g-versatility](https://www.qualcomm.com/news/onq/2022/09/how-will-sidelink-bring-a-new-level-of-5g-versatility)' -->
+
+<!-- 
+Jetzt kommen wir zu meinem absoluten Favourite der Themen
+
+- Sidelinking exisitiert seit LTE
+- erlaubt Device-to-Device Kommunikation anstelle von Network-to-Device
+- Distiibuted Networking oder Distributed Base Stations
+  - Teile der Funktionen ausgelagert (Verbindungsverwaltung)
+  - Stellvertreterverbindung zur Base Station
+ -->
+
+---
+
+![center](https://s7d1.scene7.com/is/image/dmqualcommprod/Picture3-2?$QC_Responsive$&fmt=png-alpha&wid=640)
+
+<!-- _footer: '["How will sidelink bring a new level of 5G versatility?", Qualcomm, 08.09.2022, https://www.qualcomm.com/news/onq/2022/09/how-will-sidelink-bring-a-new-level-of-5g-versatility](https://www.qualcomm.com/news/onq/2022/09/how-will-sidelink-bring-a-new-level-of-5g-versatility)' -->
+
+<!-- 
+[Graphik von Qualcomm erklären]
+
+- Geräte mit 5G-Kapazitäten, Wearables oder Drohnen
+- Notfalltrupp wie Feuerwehr brauchen bloß ein ausgerüstetes Einsatz-Fahrzeug
+- Netz, wo keines ist
+-->
+
+---
+
+### Verbesserungen durch NR Sidelink
+
+- Erhöhte (Sidelink-)Reichweite
+- Vergrößerte Kapazität
+- Data Offload
+
+<!-- _footer: '["How will sidelink bring a new level of 5G versatility?", Qualcomm, 08.09.2022, https://www.qualcomm.com/news/onq/2022/09/how-will-sidelink-bring-a-new-level-of-5g-versatility](https://www.qualcomm.com/news/onq/2022/09/how-will-sidelink-bring-a-new-level-of-5g-versatility)' -->
+
+<!-- 
+in 5G neu:
+- Größere Reichweite: Nützlicher und besser zusammen mit...
+- Größere Kapazität: Mehr Verbindungen gleichzeitig über Stellvertretergerät
+- Data Offload: Direkte Kommunikation zwischen Geräten im Edge Netzwerk ohne Beteiligung von BS
+
+-> Strom sparen durch kleinere Netze und Nicht-Nutzung von Base Stations
+ -->
 
 ---
 
@@ -527,20 +647,57 @@ TDD: Time Division Duplex
 ![h:500 center](bilder/SleepModesTransitions.png)
 <!-- _footer: Dynamic gNodeB Sleep Control for Energy-Conserving 5G Radio Access Network; Pengfei Shen et al., 13.07.2022 -->
 
+<!-- 
+Zu guter letzt will ich noch kurz das Problem und die Möglichkeiten von Sleep Modes ansprechen, bevor wir in eine Fragerunde übergehen
+
+Wir sehen hier, ohne Maße, wie start der Unterschied Leistungsunterschied ist zwischen den verfügbaren Schlafmodi.
+
+- Microsleep ist basically Idle Modus, also schlichtweg inaktiv
+- Light Sleep ist ein tatsächlicher Sleep Mode, bei dem wirklich Teile der Hardware abgeschaltet werden und neu hochgefahren werden müssen
+- Deep Sleep bedeutet die Abschaltung von der meisten Hardware, sodass nur das notwendige zum automatisierten Neustart noch an ist
+
+Im Vergleich Active DL und Active UL
+
+Die Transition Times und Unterschiede im Power lassen mich vermuten, dass es da großes Potenzial zur Verbesserung gibt, insb. da kaum ein Nutzer merken würde, wenn es eine zusätzliche Latenz von 6 ms gibt.
+ -->
+
+---
+
+## Sleep Modes
+
+![h:500 center](bilder/SleepModeSwitching.png)
+<!-- _footer: Dynamic gNodeB Sleep Control for Energy-Conserving 5G Radio Access Network; Pengfei Shen et al., 13.07.2022 -->
+
+<!-- 
+Diese Graphik von 2022 zeigt das tatsächliche Ausmaß von Switching Policies, sogar mit eingerechneter Switching Power von 20W
+
+Der Unterschied ist, wenn ich erlich bin, ernüchternd. Wir reden von einem Faktor vov 2080 zwischen Deep Sleep und Active DL und trotzdem haben wir einen Power Consumption Unterschied hier von vielleicht 50W.
+ -->
+
 ---
 
 ### Täglicher Traffic
 
 ![h:500 center](bilder/CommTraffic.png)
-<!-- _footer: Energy consumption optimization of 5G base stations considering variable threshold sleep mechanism; Xiaoyan Ma et al. -->
+<!-- _footer: Energy consumption optimization of 5G base stations considering variable threshold sleep mechanism; August 2023; Xiaoyan Ma et al.; Science Direct, Volume 9, Supplement 6 -->
+
+<!-- 
+Ein anderes Paper von August 0223, das ich mir zur Hand genommen habe, nimmt den Tagesverlauf als entscheidende Graphik.
+
+Hier sehen wir nochmal das, worüber ich vor einigen Wochen schon mal gesprochen habe, nämlich, dass der Unterschied an Auslastung im Netz zwischen fürh morgens und tagsüber bis abends sehr deutlich ist.
+ -->
 
 ---
 
 ## Sleep Modes
 
 ![h:500 center](bilder/CommTrafficSleep.png)
-<!-- _footer: Energy consumption optimization of 5G base stations considering variable threshold sleep mechanism; Xiaoyan Ma et al. -->
+<!-- _footer: Energy consumption optimization of 5G base stations considering variable threshold sleep mechanism; August 2023; Xiaoyan Ma et al.; Science Direct, Volume 9, Supplement 6 -->
 <!--
+Und hier sehen wir ein paar Kombinationen an Sleep Mode Strategien und deren Stromverbrauch über die gleichen 24h hinweg.
+
+Und mit diesem Cliffhanger, was theoretisch möglich wäre, will ich diese Präsentation beenden...
+
 ECOS: Energy Consumption Optimization of 5G BSs
 IMAP: Initial Matching Association Process
 FTSS: Fixed threshold sleep strategy
@@ -554,6 +711,10 @@ _paginate: skip
 -->
 
 ![h:600 center](https://media.makeameme.org/created/noch-fragen-e5ff492912.jpg)
+
+<!--
+... und wenn es geht auf eure Fragen eingehen
+ -->
 
 ---
 
@@ -570,6 +731,7 @@ _paginate: skip
 | IMAP      | Initial Matching Association Process                |
 | FTSS      | Fixed threshold sleep strategy                      |
 | MTRS      | Maximum transmission rate user association strategy |
+| QAM       | Quadrature amplitude modulation                     |
 
 ---
 
