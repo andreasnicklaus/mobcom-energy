@@ -135,7 +135,9 @@ Von den 10 Indikatoren, bei denen man sich vorstellen kann, dass sie zutreffend 
 
 Kohlendioxidemissionen und Luftqualität nur für Generator für  generelle Stromversorgung oder Notstromversorgung
 Lärmbelastung genauso.
-TODO: wie laut sind gNB Base Stations?
+
+[keine Infos zu wie laut Base Stations sind]
+TODO: Experiment zur Lautstärke von Base Stations
 
 Siedlungs-und Verkehrsfläche und Flächenverbrauch schauen wir uns auf der nächsten Folie ganz kurz an.
 Altlasten sind grob bleibende Schäden nach der Bebauung, hängen also eng mit der Baufläche zusammen.
@@ -348,8 +350,6 @@ neue Infos:
 
 ## Stromverbrauch zusammengefasst
 
-<!-- TODO: wie viel Batterie ist in einer Basisstation? Wie lange kann Strom ausfallen? -->
-
 - bei Betrieb dauerhaft 42,6 MW in Deutschland
 - 13 Minuten / Liter verkraftbarer Stromausfall
 - ca. **0,071% des Gesamtverbrauchs** in Deutschland gehen auf Basis Stationen zurück
@@ -359,7 +359,11 @@ Zusammengefasste Anforderungen
 
 - dauerhaft 43 MW irgendwo herbekommen
 - Überbrückung durch Batterien ist eingeschränkt durch Produktions- und Herstellungskosten
+  - wie viele Batterien in einer BS: keine Infos, aber Bilder mit 5 Packs -> ca. 6 Stunden (Vermutung!)
 - Zahl zum Mitnehmen 0,071% des Gesamtverbrauchs in Deutschland sind Base Stations
+
+FIXME: Vermutung sollte nicht sein
+
 -->
 
 ---
@@ -405,7 +409,7 @@ Stattdessen können wir uns darüber unterhalten, aus welchen Bauteilen eine Bas
 4. Rest, um alles am Laufen zu halten
   1. Stromanschluss
   2. Batterien
-  3. Transmission Equipment (Kabel, Adapter, nicht-usergerichtete Ausrüstung etc.)
+  3. Transmission Equipment (Kabel, Adapter, nicht-usergerichtete Ausrüstung, Spannungswechsel etc.)
   4. Kühlung
 
 In 5G sind wegen der Veränderungen der Begriffe und der Feingranularität der Standorte oft RRU und Antennen zusammengefasst in AAU und BBUs aufgeteilt in Centralized Units abseits der Base Station und Distributed Units, lokal nahe am Mast sind.
@@ -490,7 +494,10 @@ Giga MiMO ist in der Liste, nicht weil es dazu führt, dass der Gesamtverbrauch 
 
 In 6G ist außerdem das Ziel ausgesprochen, dass Giga MIMO noch stärker genutzt und verbessert werden soll, was in unserem Kontext ja bloß positiv sein kann.
 
-TODO: mehr Infos
+---
+
+Giga MIMO ist basically Massive MIMO auf 7-16 GHz mit noch engeren Antennenteilen und einer Reichweite von max. 500 Metern
+
 -->
 
 ---
