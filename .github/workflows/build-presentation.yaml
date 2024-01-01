@@ -18,7 +18,7 @@ jobs:
       - name: Marp Build (README.pdf)
         uses: docker://marpteam/marp-cli:v1.7.0
         with:
-          args: presentation.md -o docs/index.html
+          args: presentation.md -o docs/index.html --html --title="Umweltbelastung von Moderner Mobilkommunikation" --author="Andreas Nicklaus"
         env:
           MARP_USER: root:root
       - name: copy images
