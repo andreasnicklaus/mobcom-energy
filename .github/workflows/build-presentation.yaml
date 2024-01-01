@@ -22,7 +22,7 @@ jobs:
         env:
           MARP_USER: root:root
       - name: copy images
-        run: mkdir docs/bilder && cp -r bilder docs/bilder
+        run: sudo cp -r bilder docs/bilder
       - name: Deploy production
         uses: JamesIves/github-pages-deploy-action@v4
         with:
