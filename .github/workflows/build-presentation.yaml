@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  docker-app:
+  presentation-build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -21,6 +21,8 @@ jobs:
           args: presentation.md -o docs/index.html
         env:
           MARP_USER: root:root
+      - name: copy images
+        run: cp -r bilder docs/bilder
       - name: Deploy production
         uses: JamesIves/github-pages-deploy-action@v4
         with:
