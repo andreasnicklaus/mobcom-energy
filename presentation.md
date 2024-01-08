@@ -56,7 +56,7 @@ Hallo, willkommen zu meiner Vorstellung des Themas Umweltbelastung von Moderner 
 # Worum geht's heute?
 
 1. Was ist Umweltbelastung?​
-2. Wie stark ist der Einfluss von Mobilkommunikation auf die Umwelt?​
+2. Wie stark ist der Einfluss von Mobilkommunikation auf den nat. Stromverbrauch?​
 3. Wo kommt der Energieverbrauch her?​
 4. Wie kann eingespart werden?​
 
@@ -308,7 +308,7 @@ Indikatoren: Energieverbrauch und Erneuerbare Energien
 ![h:400 center](bilder/bruttostromerzeugung-erneuerbare-energien.png)
 <!-- _footer: '["Bruttostromerzeugung 2022", Statistisches Bundesamt (Destatis), https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Energie/_Grafik/_Interaktiv/bruttostromerzeugung-erneuerbare-energien.html](https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Energie/_Grafik/_Interaktiv/bruttostromerzeugung-erneuerbare-energien.html)' -->
 
-**Veraltet!** Bruttostromerzeugung im [1. Halbjahr 2023](https://www.destatis.de/DE/Presse/Pressemitteilungen/2023/09/PD23_351_43312.html) und [3. Quartal 2023](https://www.destatis.de/DE/Presse/Pressemitteilungen/2023/12/PD23_462_43312.html)
+**Veraltet!** Bruttostromerzeugung im [3. Quartal 2023](https://www.destatis.de/DE/Presse/Pressemitteilungen/2023/12/PD23_462_43312.html)
 
 <!-- 
 Nutzung von erneuerbaren Energien hängt von der Stromerzeugung ab.
@@ -323,7 +323,7 @@ In DE in 2022 44% erneuerbare Energien, generell Windkraft deutlich mehr als Sol
 
 
 ---
-# 2. Wie stark ist der Einfluss von Mobilkommunikation auf die Umwelt?
+# 2. Wie stark ist der Einfluss von Mobilkommunikation auf den nat. Stromverbrauch?​
 
 - Mobilfunkabdeckung von 89% im Juli 2023
 - 14200 Standorte mit mehr als 43000 Antennen
@@ -678,7 +678,7 @@ Die Transition Times und Unterschiede im Power lassen mich vermuten, dass es da 
 <!-- 
 Diese Graphik von 2022 zeigt das tatsächliche Ausmaß von Switching Policies, sogar mit eingerechneter Switching Power von 20W
 
-Der Unterschied ist, wenn ich erlich bin, ernüchternd. Wir reden von einem Faktor vov 2080 zwischen Deep Sleep und Active DL und trotzdem haben wir einen Power Consumption Unterschied hier von vielleicht 50W.
+Der Unterschied ist, wenn ich erlich bin, ernüchternd. Wir reden von einem Faktor von 280 zwischen Deep Sleep und Active DL und trotzdem haben wir einen Power Consumption Unterschied hier von vielleicht 50W.
  -->
 
 ---
@@ -691,7 +691,7 @@ Der Unterschied ist, wenn ich erlich bin, ernüchternd. Wir reden von einem Fakt
 <!-- 
 Ein anderes Paper von August 0223, das ich mir zur Hand genommen habe, nimmt den Tagesverlauf als entscheidende Graphik.
 
-Hier sehen wir nochmal das, worüber ich vor einigen Wochen schon mal gesprochen habe, nämlich, dass der Unterschied an Auslastung im Netz zwischen fürh morgens und tagsüber bis abends sehr deutlich ist.
+Hier sehen wir nochmal das, worüber ich vor einigen Wochen schon mal gesprochen habe, nämlich, dass der Unterschied an Auslastung im Netz zwischen früh morgens und tagsüber bis abends sehr deutlich ist.
  -->
 
 ---
@@ -703,7 +703,7 @@ Hier sehen wir nochmal das, worüber ich vor einigen Wochen schon mal gesprochen
 <!--
 Und hier sehen wir ein paar Kombinationen an Sleep Mode Strategien und deren Stromverbrauch über die gleichen 24h hinweg.
 
-Und mit diesem Cliffhanger, was theoretisch möglich wäre, will ich diese Präsentation beenden...
+Und mit diesem Cliffhanger, was theoretisch möglich wäre, will ich für heute Schluss machen...
 
 ECOS: Energy Consumption Optimization of 5G BSs
 IMAP: Initial Matching Association Process
