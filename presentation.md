@@ -190,6 +190,8 @@ Ressourcenproduktivität = erzielte Wirtschaftsleistung pro eingesetzter Ressour
 <!-- _footer: '["Ressourcenproduktivität", Bayerisches Landesamt für Umwelt, https://www.lfu.bayern.de/umweltdaten/indikatoren/ressourcen_effizienz/ressourcenproduktivitaet/index.htm](https://www.lfu.bayern.de/umweltdaten/indikatoren/ressourcen_effizienz/ressourcenproduktivitaet/index.htm)' -->
 
 <!-- 
+Was ist Ressourcenproduktivität
+
 Mir hat das nichts gesagt und es sagt auch als absoluter Wert nichts aus, sondern als relativer Wert.
 
 [Foto] beschreiben, Trend
@@ -215,16 +217,12 @@ Mir hat das nichts gesagt und es sagt auch als absoluter Wert nichts aus, sonder
 <!-- _footer: '
 ["How Long Do Lithium-Ion Batteries Last?", Li Time, 8.5.2023, https://www.litime.com/blogs/blogs/how-long-do-lithium-ion-batteries-last](https://www.litime.com/blogs/blogs/how-long-do-lithium-ion-batteries-last)
 
-[Toward Sustainable Reuse of Retired Lithium-ion Batteries from
-Electric Vehicles, Conservation and Recycling,
-Volume 168, 2021, Yang et al.](https://linkinghub.elsevier.com/retrieve/pii/S0921344920305644)'  -->
+[Toward Sustainable Reuse of Retired Lithium-ion Batteries from Electric Vehicles, Conservation and Recycling, Volume 168, 2021, Yang et al.](https://linkinghub.elsevier.com/retrieve/pii/S0921344920305644)'  -->
 
 <!-- 
 Wenn wir über die Batterien in next generation Base Stations sprechen, dann über die Leistung, was wir gleich vergleichen werden, aber insbesondere über die Lebensdauer und Wiederverwendung.
 
 Eines der bekanntesten Batterientypen heute sind Lithium-Ionen Batterien, häufig in Verbindung gebracht mit Elektroautos.
-
-LI-Batterien sind leider auch bekannt dafür, dass die Herstellung oft schädlich ist für Mensch und Natur. Deshalb schauen wir drauf, ob man in Zukunft aus der Ressource nicht mehr draus machen kann.
 
 Was die Lebenszeit angeht, gehen die Angaben stark auseinander, zwischen 2 und 10 Jahren und 500-6000 Ladungen findet man einige Zahlen.
 
@@ -235,6 +233,7 @@ Dann gibt es 2 Möglichkeiten:
 2. Repurposing: Wiederverwendung an einem anderen Einsatzort und -zweck.
   Aus der Ressource wird letztendlich bloß noch mehr Wirtschaftsleistung gepresst. 
 
+LI-Batterien sind leider auch bekannt dafür, dass die Herstellung oft schädlich ist für Mensch und Natur. Deshalb schauen wir drauf, ob man in Zukunft aus der Ressource nicht mehr draus machen kann.
  -->
 
 ---
