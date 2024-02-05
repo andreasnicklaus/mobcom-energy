@@ -1,0 +1,41 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[english, ngerman]{babel}
+\usepackage{natbib}
+
+\makeatletter
+\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{2.3em}}
+\makeatother
+
+\bibliographystyle{plain}
+
+\title{Energy Footprint of Mobile communications in the 21st century}
+
+\author{Andreas Nicklaus}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+  deutsche Version
+\end{abstract}
+
+\selectlanguage{english}
+
+\begin{abstract}
+  englische Version
+\end{abstract}
+
+\tableofcontents
+
+\section{Defining energy footprint}
+\section{Influence of mobile communication on national power consumption}
+\section{Sources of energy consumption}
+\section{Energy saving opportunities}
+
+\clearpage
+
+\appendix
+\nocite{*}
+\renewcommand*{\refname}{\section{References}}
+\bibliography{sources}{}
+\end{document}

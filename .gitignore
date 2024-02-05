@@ -1,2 +1,6 @@
-Paper
+Paper/out/**
+!Paper/out/*.pdf
 01_Abstract Presentation.pptx
+
+**/*Freewriting**
+Textpfad.md
