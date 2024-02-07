@@ -1,11 +1,28 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage[english, ngerman]{babel}
 \usepackage{natbib}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage[acronym, toc, numberedsection]{glossaries}
 
-\bibliographystyle{plain}
+\makenoidxglossaries
+\newacronym{bs}{BS}{Radio Base Station}
+\newacronym{ue}{UE}{User Equipment}
+
+\makeatletter         
+\renewcommand\maketitle{
+{\raggedright
+\begin{center}
+{\Large \bfseries \@title}\\[2ex] 
+\@author\\[1ex] 
+\@date, Hochschule der Medien, Stuttgart\\[1ex]
+\end{center}}} 
+\makeatother
+
+\bibliographystyle{plainnat}
 
 \title{Energy Footprint of Mobile communications in the 21st century}
-
 \author{Andreas Nicklaus}
 
 \begin{document}
@@ -23,53 +40,97 @@
 
 \tableofcontents
 
-\section{Introduction}
+\section{Introduction}\label{sec:intro}
 % Vision: why and what is this topic?
+Since around 2010, mobile communication has been a vital part of everyday-life for most of the western world.
+In 2007, we saw the launch of the iPhone, arguably one of the most influencial inventions in the mobile market ever.
+With the introduction of 4G in late 2009 came a massive increase in mobile communication over the internet.
+For almost one and a half decades, more and more technology has been invented for the mobile phone market.
 
-\section{Related Work}
+In addition, the Oculus Rift has ushered in the reincarnation of the idea of Virtual Reality and spacial computing, plainly meaning the usage of 3D-space as a way to distribute user interfaces.
+More and more, we rely on small, wireless devices with a sleek, modern and fashionable design and people seem to keep buying in. 
+With that in mind, most mobile user equipment has had one spatial constraint that has so far never been overcome: Battery life and usage breaks to recharge at a wall socket.
+This paper focuses on the effectiveness of energy consumption in respect to the overall environmental impact of modern mobile communications.
+To this end, the following chapter~\ref{sec:relatedwork} summarizes other work done in the field and its topics.
+Chapter~\ref{sec:energyfootprint} introduces a definition of environmental footprint and its relevance to this topic.
+The chapters~\ref{sec:influence} and~\ref{sec:energyconsumption} go into detail about the energy production and consumption in Germany both in general and related to mobile communications.
+Chapter~\ref{sec:opportunities} then names a few opportunities for saving energy.
+
+\section{Related Work}\label{sec:relatedwork}
 % What sources have the same or similiar topic?
 
-\section{Energy footprint}
+% 5G Energy Efficiency \cite{5GEfficiencyOverview}
+% - describes the energy consumption and efficiency of base stations in detail
+% - power consumption of switching between sleep mode an active state
+
+% Dynamic gNodeB Sleep Control fo rEnergy-Conserving 5G Radio Access Network \cite{DynamicSleepModeControl}
+% - outlines the changes between 4G and 5G
+% - proposes sleep mode switching policies
+% - comparison
+
+% 5G Power Whitepaper \cite{powerwhitepaper}
+% - insights into the power consumption of parts of base stations
+% - challenges in site power construction
+% - pointers to the meaning of efficient energy saving strategies
+
+% Öffentliche Zahlen und Angaben
+% - Bruttostromerzeugung bis 2022 \cite{Bruttostromerzeugung2022}
+% - Umweltindikatoren \cite{Umweltindikatoren}
+
+\section{Energy footprint}\label{sec:energyfootprint}
 % What does it mean here?
-\subsection{Indicators for energy footprint}
+\subsection{Indicators for energy footprint}\label{subsec:indicators}
 % Of what does energy footprint consist?
-\subsection{Relevancy of indicators}
+% Categories
+% Indicators
+\subsection{Relevancy of indicators}\label{subsec:relevancy}
+% Values for the first indicators
 % TODO: First tests / findings
 % What will be the topic of the rest of the chapters
 
-\section{Influence of mobile communication on national power consumption}
-\subsection{National averages of Germany}
+\section{Influence of mobile communication on national power consumption}\label{sec:influence}
+% Narrowing down the topic "environment" to "energy and power" to electricity
+% Specifying Germany as the investigated region
+\subsection{National averages of Germany}\label{subsec:nationalaverage}
 % What is the national power consumption and production in Germany?
-\subsection{Base Stations}
+\subsection{Base Stations}\label{subsec:BSInfluence}
 % How much do the base stations consume?
-\subsection{User Equipment}
+\subsection{User Equipment}\label{subsec:UEInfluence}
 % TODO: How much do user equipments consume?
-% What percentage of the national power consumption / production is that?
+% What percentage of the national power consumption / production is that? 
 
-\section{Sources of energy consumption}
-\subsection{Base Stations}
+\section{Sources of energy consumption}\label{sec:energyconsumption}
+\subsection{Base Stations}\label{subsec:BSConsumption}
 % What is in a base station?
 % What parts are responsible for most of the power consumption
-\subsection{User Equipment}
+\subsection{User Equipment}\label{subsec:UEConsumption}
 % TODO: What is in a user equipment?
 % What parts are responsible for most of the power consumption
 
-\section{Energy saving opportunities}
+\section{Energy saving opportunities}\label{sec:opportunities}
 % What possibilities are/will be deployable for power consumption?
-\subsection{Giga-MIMO}
-\subsection{NR-Light}
-\subsection{Lower Transmit Power for IoT devices (Reduced Capability NR)}
-\subsection{Sidelink enhancements}
-\subsection{Sleep Modes}
+\subsection{Giga-MIMO}\label{subsec:gigamimo}
+\subsection{NR-Light}\label{subsec:nrlight}
+\subsection{Reduced Capability NR}\label{subsec:RedCap}
+% Lower Transmit Power for IoT devices
+\subsection{Sidelink enhancements}\label{subsec:sidelink}
+\subsection{Sleep Modes}\label{subsec:sleep}
 
-\section{Conclusion}
+\section{Conclusion}\label{sec:conclusion}
 % Is the situation relevant to national power consumption?
 % Are there effective solutions to reduce power consumption?
 % Will this topic become more relevant in the future?
 
+
 \clearpage
 
 \appendix
+% \acrlong{gcd}
+% \acrshort{gcd}
+% \acrfull{lcm}
+\glsaddall
+\printnoidxglossary[type=\acronymtype,nonumberlist]
+
 \nocite{*}
 \renewcommand*{\refname}{\section{References}}
 \bibliography{sources}{}
