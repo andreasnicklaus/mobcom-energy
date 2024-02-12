@@ -4,6 +4,8 @@
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{subcaption}
+\usepackage[raggedrightboxes]{ragged2e}
+\usepackage{csquotes}
 \usepackage[acronym, toc, numberedsection]{glossaries}
 
 \makenoidxglossaries
@@ -49,7 +51,7 @@ For almost one and a half decades, more and more technology has been invented fo
 
 In addition, the Oculus Rift has ushered in the reincarnation of the idea of Virtual Reality and spacial computing, plainly meaning the usage of 3D-space as a way to distribute user interfaces.
 More and more, we rely on small, wireless devices with a sleek, modern and fashionable design and people seem to keep buying in. 
-With that in mind, most mobile user equipment has had one spatial constraint that has so far never been overcome: Battery life and usage breaks to recharge at a wall socket.
+With that in mind, most mobile \acrshort{ue} has had one spatial constraint that has so far never been overcome: Battery life and usage breaks to recharge at a wall socket.
 This paper focuses on the effectiveness of energy consumption in respect to the overall environmental impact of modern mobile communications.
 To this end, the following chapter~\ref{sec:relatedwork} summarizes other work done in the field and its topics.
 Chapter~\ref{sec:energyfootprint} introduces a definition of environmental footprint and its relevance to this topic.
@@ -59,56 +61,157 @@ Chapter~\ref{sec:opportunities} then names a few opportunities for saving energy
 \section{Related Work}\label{sec:relatedwork}
 % What sources have the same or similiar topic?
 
-% 5G Energy Efficiency \cite{5GEfficiencyOverview}
-% - describes the energy consumption and efficiency of base stations in detail
-% - power consumption of switching between sleep mode an active state
+% Öffentliche Zahlen und Angaben
+% - Bruttostromerzeugung bis 2022 \cite{Bruttostromerzeugung2022}
+% - Umweltindikatoren \cite{Umweltindikatoren}
+When inspecting the relevance of mobile communications within the global energy market, one can only rely on data given out by nations or leagues of nations.
+\citep{Stromverbrauch} gives a summary of the electricity consumption in Germany by year and \citep{Bruttostromerzeugung} shows the production of electrical power between 2019 and 2022 by energy source.
 
-% Dynamic gNodeB Sleep Control fo rEnergy-Conserving 5G Radio Access Network \cite{DynamicSleepModeControl}
-% - outlines the changes between 4G and 5G
-% - proposes sleep mode switching policies
-% - comparison
+\citep{Umweltindikatoren} lists generalized indicators for environmental impact.
+These indicators are meant to help analyze the effect of any product or project on the environment.
 
 % 5G Power Whitepaper \cite{powerwhitepaper}
 % - insights into the power consumption of parts of base stations
 % - challenges in site power construction
 % - pointers to the meaning of efficient energy saving strategies
+The whitepaper \citep{powerwhitepaper} is a technical report on the state of \acrshort{bs} and gives insight into the power consumption of \acrshort{bs} as a whole and parts.
+The paper also outlines challenges for the construction of site power supply and gives pointers to what efficient power saving strategies could do.
 
-% Öffentliche Zahlen und Angaben
-% - Bruttostromerzeugung bis 2022 \cite{Bruttostromerzeugung2022}
-% - Umweltindikatoren \cite{Umweltindikatoren}
+% 5G Energy Efficiency \cite{5GEfficiencyOverview}
+% - describes the energy consumption and efficiency of base stations in detail
+% - power consumption of switching between sleep mode an active state
+\citep{5GEfficiencyOverview} describe the energy consumption and efficiency of \acrshort{bs} in detail and examines the power consumption of switching between a sleep state and an active state.
 
-\section{Energy footprint}\label{sec:energyfootprint}
+% Dynamic gNodeB Sleep Control fo rEnergy-Conserving 5G Radio Access Network \cite{DynamicSleepModeControl}
+% - outlines the changes between 4G and 5G
+% - proposes sleep mode switching policies
+% - comparison
+\citep{DynamicSleepModeControl} outline the technical changes going from 4G to 5G infrastructure.
+Based on those findings, they propose multiple sleep mode switching policies and gives a comparison between them.
+
+\section{environmental footprint}\label{sec:energyfootprint}
 % What does it mean here?
-\subsection{Indicators for energy footprint}\label{subsec:indicators}
+This chapter gives an outline of the meaning of environmental impact and the metrics for it.
+First, the section~\ref{subsec:indicators} summarizes the indicators factoring into the effect on the environment.
+Second, the section~\ref{subsec:relevancy} gives first answers to the relevancy of those indicators and interprets why some indicators are more relevant to this topic than others.
+
+\subsection{Indicators for environmental footprint}\label{subsec:indicators}
 % Of what does energy footprint consist?
 % Categories
 % Indicators
+
+When we want to analyze the impact something has on the environment, we need to have consistent metrics to give values to and compare.
+\citep{Umweltindikatoren} gives 27 general indicators as to what those metrics have to reflect on and are grouped into four categories.
+Table~\ref{tab:indicators} show all indicators within its category.
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{p{0.21\linewidth}|p{0.21\linewidth}|p{0.21\linewidth}|p{0.21\linewidth}}
+    \textbf{Climate and Energy} & \textbf{Nature and landscape} & \textbf{Environment and health} & \textbf{Resources and efficiency}\\
+    \hline
+    Climate change and vegetation development & Landscape fragmentation & \textit{Air quality} & Waste generation\\
+    \hline
+    \textit{Carbon dioxide emissions} & Species diversity and landscape quality & \textit{Noise pollution} & \textit{Recycling rate}\\
+    \hline
+    \textit{Energy consumption} & Red List species & Road traffic noise & \textit{Resource productivity}\\
+    \hline
+    \textit{Renewable energies} & Area for nature conservation objectives & Freight transport performance & Organic farming\\
+    \hline
+    & Agricultural land with high nature value & Local public transport & \textit{Settlement and traffic area}\\
+    \hline
+    & Forest condition & Nitrate in groundwater & \textit{Land use}\\
+    \hline
+    & Acidity and nitrogen input & Heavy metal input & \textit{Contaminated sites}\\
+    \hline
+    & Nitrogen surplus &\\
+    \hline
+    & Ecological status of surface waters &\\
+  \end{tabular}
+  \caption{27 Environmental Indicators \citep{Umweltindikatoren}, italics are relevant to mobile communications}
+  \label{tab:indicators}
+\end{table}
+
+For this paper, these indicators will be used to narrow down the topic down to the most relevant factors.
+
 \subsection{Relevancy of indicators}\label{subsec:relevancy}
 % Values for the first indicators
-% TODO: First tests / findings
 % What will be the topic of the rest of the chapters
+
+On the topic of mobile communications in general, all indicators of the category \enquote{Nature and landscape} can be ignore due to the fact that they are not applicable to either \acrshort{bs}, cable laying to and from those \acrshort{bs} or the \acrshort{ue}.
+
+From the category \enquote{Climate and Energy}, the indicator Climate change and vegetation development will be ignored due to the \acrshort{bs}' signal outputs' unproven significance on the vegetation.
+The effect of \acrshort{bs} on the climate change is only noticable through the usage of electicity which is inspected under the other indicators of the category.
+
+The category \enquote{Environment and health} only yields the relevant indicators air quality and noise pullution, both mainly dependent on the energy source of \acrshort{bs} and \acrshort{ue}.
+% TODO: noise tests
+The other indicators of the category will be ignore because they are not applicable to mobile communications.
+The positive effect that mobile communications might have towards the management of traffic and both freight and public transport are not inspected in this paper.
+
+This paper assumes that only a insignificant number of \acrshort{bs} are built on agricultural land and that once built these \acrshort{bs} produce next to no waste at all.
+Therefore the indicators waste generation and organic farming can be left out of this paper.
+All other indicators from the category \enquote{Resources and efficiency} are applicable to the build site and lifecycle of \acrshort{bs} and \acrshort{ue} and are applicable to mobile communications.
+
+
+The indicators \enquote{Carbon dioxide emissions}, \enquote{Air quality} and \enquote{Noise pollution} all boil down the source of electical power of the base station and \acrshort{ue}.
+\citep{powerwhitepaper} implicates that near all \acrshort{bs} use whatever electical power they can get on-site and have lithium-ion batteries for emergency-power.
+With that electrical equipment the effect of those three indicators are dependent on the source on the power grid and therefore dependent on the indicators \enquote{Energy consumption} of the equipment and the \enquote{Renewable energies} produces for the power grid of the region.
+
+\enquote{Settlement and traffic area}, \enquote{Land use} and \enquote{Contaminated sites} come down the the area that build site of  \acrshort{bs}.
+\citep{BSStandort} states in its advertisement for new build site of \acrshort{bs} \enquote{Around ten square meters of technical space is required to operate a radio station on the roof, and around 150 square meters of floor space or technical space is required for a mast}.
+Because it is possible to use already developed areas and effect on the above mentioned indicators is not caused by the building of new \acrshort{bs}, the effect of \acrshort{bs} can be considered nonexistent.
+
+This means that only four of the 27 indicators are relevant to mobile communications:
+\begin{enumerate}
+  \item \textbf{Energy consumption}: Energy, electrical and other, consumed per consumer unit and consumption time. Usually measured in kWh per person and year.
+  \item \textbf{Renewable energies}: Share of renewable energy in energy consumption and production (assumed to be equal here).
+  \item \textbf{Recycling rate}: Share of recycled materials in total waste generation.
+  \item \textbf{Resource productivity}: Ratio of gross domestic product to primary energy consumption or raw material consumption in relation to a base year.
+\end{enumerate}
+
+The upcoming chapters will only cover those four topics.
 
 \section{Influence of mobile communication on national power consumption}\label{sec:influence}
 % Narrowing down the topic "environment" to "energy and power" to electricity
 % Specifying Germany as the investigated region
-\subsection{National averages of Germany}\label{subsec:nationalaverage}
+
+Having narrowed down the topic of environmental impact of mobile communications down to the power consumed by the equipment and the resources used in production and after usage, this chapter aims to give comparison and numbers filling in the indicators of chapter~\ref{sec:energyfootprint}.
+For the comparison, the assumption is made that the usage and production of base stations is similiar around the world although for the energy consumption and production, the mobile communications and energy markets of only Germany will be inspected. 
+
+\subsection{National energy data of Germany}\label{subsec:nationalaverage}
 % What is the national power consumption and production in Germany?
+In the year 2022, 573.1 TWh of electricity were produced gross, close to 2\% less than the three-year average of ca. 584.06 TWh in 2019-2022.
+Of that, 254 TWh (44\%) were produced using renewable energy sources, mainly wind power and photovoltaics \citep{Bruttostromerzeugung}.
+Over the whole year 2022, 11,01\% (63,1 TWh) of the greed feed-in were imported \citep{energieErzeugung}.
+In the third quartal of 2022, 10.99\% (13 of 118.2 TWh) have been imported and 16 TWh have been exported.
+The third quartal of 2023 showed an increase of imported feed-in to 23.1 TWh and 9.9 TWh exported power \citep{stromerzeugung3Quartal2023}.
+
+In 2022, 552 TWh have been consumed gross \citep{Stromverbrauch} and 490.6 TWh net \citep{NettoStromverbrauch}.
+Of the gross consumption, 46\% have been from renewable energy sources \citep{Stromverbrauch}.
+
 \subsection{Base Stations}\label{subsec:BSInfluence}
 % How much do the base stations consume?
+
+
 \subsection{User Equipment}\label{subsec:UEInfluence}
 % TODO: How much do user equipments consume?
 % What percentage of the national power consumption / production is that? 
+
 
 \section{Sources of energy consumption}\label{sec:energyconsumption}
 \subsection{Base Stations}\label{subsec:BSConsumption}
 % What is in a base station?
 % What parts are responsible for most of the power consumption
+
+
 \subsection{User Equipment}\label{subsec:UEConsumption}
 % TODO: What is in a user equipment?
 % What parts are responsible for most of the power consumption
 
+
 \section{Energy saving opportunities}\label{sec:opportunities}
 % What possibilities are/will be deployable for power consumption?
+
+
 \subsection{Giga-MIMO}\label{subsec:gigamimo}
 \subsection{NR-Light}\label{subsec:nrlight}
 \subsection{Reduced Capability NR}\label{subsec:RedCap}
