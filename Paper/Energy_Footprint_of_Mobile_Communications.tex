@@ -6,6 +6,7 @@
 \usepackage{subcaption}
 \usepackage[raggedrightboxes]{ragged2e}
 \usepackage{csquotes}
+\usepackage{pgf-pie}
 \usepackage[acronym, toc, numberedsection]{glossaries}
 
 \makenoidxglossaries
@@ -89,7 +90,7 @@ The paper also outlines challenges for the construction of site power supply and
 \citep{DynamicSleepModeControl} outline the technical changes going from 4G to 5G infrastructure.
 Based on those findings, they propose multiple sleep mode switching policies and gives a comparison between them.
 
-\section{environmental footprint}\label{sec:energyfootprint}
+\section{Environmental footprint}\label{sec:energyfootprint}
 % What does it mean here?
 This chapter gives an outline of the meaning of environmental impact and the metrics for it.
 First, the section~\ref{subsec:indicators} summarizes the indicators factoring into the effect on the environment.
@@ -190,11 +191,43 @@ Of the gross consumption, 46\% have been from renewable energy sources \citep{St
 
 \subsection{Base Stations}\label{subsec:BSInfluence}
 % How much do the base stations consume?
+% Juli 2023: 89% Abdeckung
+% 3kW pro BS
+% 14200 Standorte (Telekom)
+% 41.945 Basisstationen (2022) laut Statista https://de.statista.com/statistik/daten/studie/1237437/umfrage/anzahl-der-5g-basisstationen-in-deutschland/
+% 71510 Mobilfunkstandorte in Deutschland: https://www.bundesnetzagentur.de/DE/Fachthemen/Telekommunikation/Technik/EMF/start.html
+% 42% 6 oder mehr, 14% 5, 8% 4, 12% 3, 13% 2 und 10% eine Mobilfunkanlage https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommunikation/Verbraucher/ElektromagnetischeFelder/Statistiken/standortmitbenutzung_20240101.pdf?__blob=publicationFile&v=1
+%   inklusive:LTE 800 MHz, GSM 900 MHz, GSM/LTE 1800 MHz, UMTS/LTE 2600 MHz, 5G 3600 MHz
 
+According to \cite{BSStandort}, a build-site for single \acrshort{bs} needs a power supply that can deal with a constant load of 3kW.
+In \cite{vodafoneAusbau}, Vodafone states to have have built 14200 sites with at least some 5G capabilities and there are 41945 5G \acrlong{bs}s in Germany \citep{5gBS}.
+The exact number of \acrshort*{bs} is probably difficult to determine because there are only very few public technical reports on the expansion to 5G and most of the marketing publications online have no technical information as to which \enquote{5G \acrlong{bs}s} include sites with LTE functionality used for NSA mode 5G New Radio.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \pie[sum=auto, after number=\%, radius=2, text=legend]{42/6 or more radio systems, 14/5 radio systems, 8/4 radio systems, 12/3 radio systems, 13/2 radio systems, 10/1 radio system}
+  \end{tikzpicture}
+  \caption{Distribution of radio systems within all \acrlong*{bs} sites in Germany \citep{EMF} (missing one percent due to rounding errors)}
+  \label{fig:EMFdistribution}
+\end{figure}
+
+However, it is known that there are 71510 \enquote{mobile phone sites} in Germany.
+This number includes radio sites with LTE (800 MHz), GSM (900 MHz), GSM/LTE (1800 MHz), UMTS/LTE (2600 MHz) and 5G (3600 MHz) equipment.
+Figure~\ref{fig:EMFdistribution} shows the distribution of number of radio systems on those sites \citep{EMF}.
+
+Taking 41945 5G \acrlong{bs}s and 3kW as our reference number of units and power consumption for 5G under full load, it can be estimated that the total grid load is 125.835 GW.
+Assuming full load all year around the maximum power consumption can be calculated with 1.1023146 TWh per year or 26.28 MWh per site and year.
+This results in 0.19969\% of the gross and 0.224687\% of the net national power consumption.
+0.19234\% of the national electrical power production is used up by the base stations in the Germany.
+
+Note that the number of 5G base stations in 2022 was enough to \enquote{only} cover 79\% of the nation's area \citep{5Gausbau}.
+To adapt for a complete coverage in the future, the number of the above paragraph will be multiplied by factor of 1.266 (overlap not included).
 
 \subsection{User Equipment}\label{subsec:UEInfluence}
 % TODO: How much do user equipments consume?
 % What percentage of the national power consumption / production is that? 
+% 169 Millionen Mobilfunkanschlüsse in Deutschland https://de.statista.com/statistik/daten/studie/3907/umfrage/mobilfunkanschluesse-in-deutschland/
 
 
 \section{Sources of energy consumption}\label{sec:energyconsumption}
