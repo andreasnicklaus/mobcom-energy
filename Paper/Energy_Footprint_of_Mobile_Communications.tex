@@ -7,6 +7,7 @@
 \usepackage[raggedrightboxes]{ragged2e}
 \usepackage{csquotes}
 \usepackage{pgf-pie}
+\usepackage{pgfplots}
 \usepackage[acronym, toc, numberedsection]{glossaries}
 
 \makenoidxglossaries
@@ -17,6 +18,12 @@
 \newacronym{nsa}{NSA}{Non-standalone}
 \newacronym{4g}{4G}{4th generation mobile network}
 \newacronym{5g}{5G}{5th generation mobile network}
+\newacronym{aau}{AAU}{Active Antenna Unit}
+\newacronym{bbu}{BBU}{Building Baseband Unit}
+\newacronym{rru}{RRU}{Remote Radio Unit}
+\newacronym{ac}{AC}{Air Conditioning}
+\newacronym{cu}{CU}{Centralized Unit}
+\newacronym{du}{DU}{Destributed Unit}
 
 \makeatletter         
 \renewcommand\maketitle{
@@ -294,10 +301,78 @@ The 104.904 million human-used devices in Germany consume 382.8996 GWh per year 
 Of those, we are only concerned with the devices participating in modern mobile communications (44.67\%), bringing those numbers down to 171.041 and 275.547 GWh respectively.
 
 \section{Sources of energy consumption}\label{sec:energyconsumption}
+In order to outline the opportunities for saving energy, this chapter gives details about what parts of \acrlong{bs}s and \acrlong{ue} consumes most of the power.
+The following chaper~\ref{sec:opportunities} then describes five technologies that either increase efficiency or save power entirely.
+
 \subsection{Base Stations}\label{subsec:BSConsumption}
 % What is in a base station?
 % What parts are responsible for most of the power consumption
 
+The parts of a modern \acrshort{bs} can be seperated into several units.
+The antenna system and \acrfull{rru} are capable of convertimg and sending a baseband signal as a radio signal and the \acrfull{bbu} modulates a signal from and onto the used radio frequency.
+The physical support system includes all components to keep the antenna system, \acrshort{rru} and \acrshort{bbu} running, e.g. the power supply, backup batteries, transmittion equipment like cables and converters and \acrfull{ac}.
+Due to the current situation, in which the \acrshort{bbu}s can have some distance to the antenna systems and \acrshort{rru} and can supply more than one, the antenna system and \acrshort{rru} are often combined to a \acrfull{aau} and \acrshort{bbu}s are differentiate between a \acrfull{cu} and a \acrfull{du}.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      xlabel=Traffic Load,
+      ylabel=Avg. Power Consumption (W),
+      xmin=0, xmax=100,
+      xticklabels={0\%, 25\%, 50\%, 75\%, 100\%},
+      xtick={0, 25, 50, 75, 100},
+      legend style={at={(.5,1.15)}, draw=none, anchor=north, legend columns=-1},
+      ]
+
+      \addplot[smooth,mark=*,blue] plot coordinates {
+        (0,650)
+        (10,720)
+        (20,767.5)
+        (30,812.5)
+        (50,932.5)
+        (100,1155)
+        };
+      \addlegendentry{AAU}
+      
+      \addplot[dashed, blue] plot coordinates {
+        (0,175)
+        (100,175)
+        };
+      \addlegendentry{AAU Deep Sleep}
+
+      \addplot[smooth,mark=*,red] plot coordinates {
+        (0,307.5)
+        (10,307.5)
+        (20,307.5)
+        (30,307.5)
+        (50,307.5)
+        (100,307.5)
+        };
+      \addlegendentry{BBU}
+      
+      \addplot[dashed, red] plot coordinates {
+        (0,307.5)
+        (100,307.5)
+        };
+      \addlegendentry{BBU Deep Sleep}
+
+      \addplot[orange] plot coordinates {
+        (0,1740)
+        (100,1740)
+        };
+      \addlegendentry{AC}
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Average power consumption of  \acrshort{aau}, \acrshort{bbu} and \acrshort{ac} by traffic load and its respective deep sleep power consumption \citep{green5G}}
+  \label{fig:BSConsumption}
+\end{figure}
+
+Figure~\ref{fig:BSConsumption} shows the power consumption by \acrshort{bs} unit and traffic load and the power consumption of each unit in a deep sleep mode.
+The power consumption of the the \acrshort{ac} is shown seperately from the other physical support equipment because the rest has a power consumption of next to zero.  
+Note that the power consumption of the \acrshort*{bbu} and the \acrshort{ac} are static and more importantly independent from the traffic load.
+For the \acrlong{ac} that cannot be explained with the very specific demand of \acrlong{bs}s to disable the \acrshort{ac} on low traffic times or when the environment is cold anyways, which is sensible.
+On the other hand, the demand for power saving dependent on traffic load usually concerns short time intervals, e.g. few milliseconds or seconds, which is shorter than the average reaction or effect time of a \acrlong{ac} unit.
 
 \subsection{User Equipment}\label{subsec:UEConsumption}
 % TODO: What is in a user equipment?
