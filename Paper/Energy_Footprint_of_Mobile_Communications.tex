@@ -12,6 +12,9 @@
 \makenoidxglossaries
 \newacronym{bs}{BS}{Radio Base Station}
 \newacronym{ue}{UE}{User Equipment}
+\newacronym{m2m}{M2M}{Machine-to-Machine}
+% TODO: add LTE here and in the text
+% TODO: add 5G here and in the text
 
 \makeatletter         
 \renewcommand\maketitle{
@@ -52,7 +55,7 @@ For almost one and a half decades, more and more technology has been invented fo
 
 In addition, the Oculus Rift has ushered in the reincarnation of the idea of Virtual Reality and spacial computing, plainly meaning the usage of 3D-space as a way to distribute user interfaces.
 More and more, we rely on small, wireless devices with a sleek, modern and fashionable design and people seem to keep buying in. 
-With that in mind, most mobile \acrshort{ue} has had one spatial constraint that has so far never been overcome: Battery life and usage breaks to recharge at a wall socket.
+With that in mind, most mobile \acrfull{ue} has had one spatial constraint that has so far never been overcome: Battery life and usage breaks to recharge at a wall socket.
 This paper focuses on the effectiveness of energy consumption in respect to the overall environmental impact of modern mobile communications.
 To this end, the following chapter~\ref{sec:relatedwork} summarizes other work done in the field and its topics.
 Chapter~\ref{sec:energyfootprint} introduces a definition of environmental footprint and its relevance to this topic.
@@ -75,7 +78,7 @@ These indicators are meant to help analyze the effect of any product or project 
 % - insights into the power consumption of parts of base stations
 % - challenges in site power construction
 % - pointers to the meaning of efficient energy saving strategies
-The whitepaper \citep{powerwhitepaper} is a technical report on the state of \acrshort{bs} and gives insight into the power consumption of \acrshort{bs} as a whole and parts.
+The whitepaper \citep{powerwhitepaper} is a technical report on the state of \acrfull{bs} and gives insight into the power consumption of \acrshort{bs} as a whole and parts.
 The paper also outlines challenges for the construction of site power supply and gives pointers to what efficient power saving strategies could do.
 
 % 5G Energy Efficiency \cite{5GEfficiencyOverview}
@@ -171,7 +174,7 @@ This means that only four of the 27 indicators are relevant to mobile communicat
 
 The upcoming chapters will only cover those four topics.
 
-\section{Influence of mobile communication on national power consumption}\label{sec:influence}
+\section{Numbers: mobile communication and national power consumption}\label{sec:influence}
 % Narrowing down the topic "environment" to "energy and power" to electricity
 % Specifying Germany as the investigated region
 
@@ -223,12 +226,71 @@ This results in 0.19969\% of the gross and 0.224687\% of the net national power 
 
 Note that the number of 5G base stations in 2022 was enough to \enquote{only} cover 79\% of the nation's area \citep{5Gausbau}.
 To adapt for a complete coverage in the future, the number of the above paragraph will be multiplied by factor of 1.266 (overlap not included).
+Also, this calculation assumes a full usage of the power supply at all times without idle time or down time.
 
 \subsection{User Equipment}\label{subsec:UEInfluence}
 % TODO: How much do user equipments consume?
 % What percentage of the national power consumption / production is that? 
 % 169 Millionen Mobilfunkanschlüsse in Deutschland https://de.statista.com/statistik/daten/studie/3907/umfrage/mobilfunkanschluesse-in-deutschland/
+% 8.59 Milliarden Mobilfunkanschlüsse in der Welt https://www.weforum.org/agenda/2023/04/charted-there-are-more-phones-than-people-in-the-world/
+% 6,93 Milliarden Smartphonenutzer, 7,41 Milliarden Mobiltelefonnutzer in 2024 https://www.bankmycell.com/blog/how-many-phones-are-in-the-world
+% 2022: 67.6 Mio Smartphonenutzer in Deutschland https://de.statista.com/statistik/daten/studie/198959/umfrage/anzahl-der-smartphonenutzer-in-deutschland-seit-2010/
+% 2022: 124 Pro 100 Mobilfunkanschlüsse ohne M2M https://de.statista.com/statistik/daten/studie/13264/umfrage/penetrationsrate-der-deutschen-mobilfunknetze-seit-1990/
+% 2022: 104,904 Mio. Mobilfunkanschlüsse ohne M2M (62,07%; 84,6 Mio. Einwohner) https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Bevoelkerungsstand/_inhalt.html
+% 2022: 75,5 Mio. LTE-fähige SIM-Karten (44,67%) https://de.statista.com/statistik/daten/studie/974622/umfrage/anzahl-der-aktiven-lte-faehigen-sim-karten-in-deutschland/
+% Erstes 5G-Smartphone März 2019 https://www.yourfone.de/mobilfunk-ratgeber/5g-handys
+% Seit Beginn 2019 87,9 Mio. Smartphones verkauft (2022 21,6 Mio., 2021 22,2 Mio., 2020 22 Mio., 2019 22,1 Mio.), Anteil der 5G-Handys unbekannt https://blogs.fu-berlin.de/hci2023/files/2023/05/study_id71707_smartphone-nutzung-in-deutschland.pdf
+% durchschnittlich 10 Wh pro Ladevorgang -> 3,65 kWh im Jahr https://www.gasag.de/magazin/energiesparen/stromverbrauch-smartphone
+% 5G-Tablets seit Nov. 2021 (Verkaufszahlen unbekannt), 19 Modelle in Deutschland https://www.vodafone.de/featured/smartphones-tablets/5g-tablets-apple-samsung-beste-modelle/#/
+% 3 5G-Laptop Modelle in Deutschland https://www.5g-anbieter.info/hardware/laptops-mit-5g.html
+% keine Daten zu Modellen und Verkäufen von 5G-fähigen Wearables etc.
+% Annahme: Smartphones bilden guten Durchschnitt für UE
+% Rechnungen mit 169 Millionen und 104,904 Mio. Endgeräten
+As for the \acrlong{ue}, two categories will be differentiate between in this paper: devices actively used by humans and \acrfull{m2m} communications.
+There are 8.59 billion mobile phone subscriptions~\citep{mobilephonesWorld} and 7.41 billion mobile phone users, of which 6.93 billion are smartphone users \citep{mobileusersWorld}.
 
+In Germany, the number of smartphone users in 2022 was 67.6 million \citep{smartphonenutzerDeutschland}, but there have been 104,904 million mobile phone subscriptions (124 per 100 capita \citep{mobilesubscriptionsDeutschland}) for the 84.6 million people living in Germany \citep{consensusDE2022}.
+That only describes the mobile phone subscriptions for human-used devices.
+The total count of subscriptions including \acrshort{m2m} devices is 169 million \citep{totalmobilesubscriptionsDeutschland}, meaning about 37.93\% of mobile communication connections are \acrshort{m2m} communication.
+These number describe the total number of SIM-cards in Germany without specifying wether or not the activity coming from those connections classify as \enquote{modern}.
+Only 44.67\% of the total number of SIM-Cards in circulation in Germany (77.5 million \citep{simCardsDeutschland}) have some form of LTE functionality (see Figure~\ref{fig:simdistribution}).
+
+\begin{figure}[h]
+  \begin{tikzpicture}
+    \pie[sum=auto, after number={\space M}, radius=1.7, text=legend, color={violet!60, green}]{64.096/SIM-cards in \acrshort*{m2m} devices (37.93 \%), 104.904/SIM-cards in human-used devices (62.07 \%)}
+  \end{tikzpicture}
+
+  \begin{tikzpicture}
+    \pie[sum=auto, after number={\space M}, radius=1.7, text=legend, color={orange, yellow}]{77.5/SIM-cards with LTE capabilities (44.67 \%), 93.5/SIM-cards without LTE capabilities (55.33 \%)}
+  \end{tikzpicture}
+
+  \caption{Distribution of SIM-cards in Germany between \acrlong*{m2m} and human-used devices and between cards with and without LTE capabilities (LTE or more modern), totaling 169 million (M) cards}
+  \label{fig:simdistribution}
+\end{figure}
+
+When it comes to the devices used for mobile communication, the situation is opaque.
+Very little is known about the devices in use and their specifications in \acrshort{m2m} communication (47.93\%).
+There only is some information of human-used devices that helps estimate the number of eligable and active devices.
+The first smartphone with 5G capabilities entered the German market in march of 2019 \citep{smartphonemodells5G}.
+Since the beginning of 2019, 87.9 million smartphones have been sold in Germany until 2022 (22.1 million in 2019, 22 million in 2020, 22.2 in 2021 and 21.6 million in 2022) \citep{smartphonenutzungDeutschland}.
+The share of smartphones with 5G capabilities is unknown.
+
+The number of other human-used devices is about as opaque as the \acrshort{m2m} devices.
+It is known that there have been only 19 models of 5G-capable tablets in the German market (beginning in November 2021) \citep{tabletmodels} and 3 5G-capable laptop models \citep{laptopmodels}.
+The number of other \acrlong{ue}, e.g. wearables, remains unclear.
+
+All this makes the calculation of the power demand by \acrlong{ue} very difficult.
+It is not possible to make a reliable and accurate statement about the power consumption for those devices.
+However, it is possible to make an estimation under some assumptions.
+Firstly, the assumption will be made that the average power consumption of modern smartphones is a good estimation for the power consumption of any \acrshort{ue}.
+In order to reconsile with this assumption two calculations will be made: One for all devices and one only for human-used devices.
+Secondly, the share of SIM-cards with/without LTE capability remains a constant throughout the \acrlong{ue} space, meaning the share of 44.67\% can be used across all devices types.
+This seems a good assumption because it is unclear with the currently available information to know more about the actual situation and it seems improbable that all 64.096 million \acrshort{m2m} devices have SIM-cards with LTE capabilities, leaving only 11.404 million for human-used devices.
+
+
+With those assumptions established and the information that the charging of a smartphone consumes an average of 3.65 kWh per year (10 Wh per over-night charge for 365 days per year) \citep{smartphonecharge}, the estimation of the power consumption of \acrshort{ue} is as follows:
+The 104.904 million human-used devices in Germany consume 382.8996 GWh per year and the total 169 million \acrshort{ue} devices in Germany consume 616.85 GWh per year.
+Of those, we are only concerned with the devices participating in modern mobile communications (44.67\%), bringing those numbers down to 171.041 and 275.547 GWh respectively.
 
 \section{Sources of energy consumption}\label{sec:energyconsumption}
 \subsection{Base Stations}\label{subsec:BSConsumption}
@@ -261,13 +323,10 @@ To adapt for a complete coverage in the future, the number of the above paragrap
 \clearpage
 
 \appendix
-% \acrlong{gcd}
-% \acrshort{gcd}
-% \acrfull{lcm}
-\glsaddall
+% \glsaddall
 \printnoidxglossary[type=\acronymtype,nonumberlist]
 
-\nocite{*}
+% \nocite{*}
 \renewcommand*{\refname}{\section{References}}
 \bibliography{sources}{}
 \end{document}
