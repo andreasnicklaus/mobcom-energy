@@ -13,8 +13,10 @@
 \newacronym{bs}{BS}{Radio Base Station}
 \newacronym{ue}{UE}{User Equipment}
 \newacronym{m2m}{M2M}{Machine-to-Machine}
-% TODO: add LTE here and in the text
-% TODO: add 5G here and in the text
+\newacronym{lte}{LTE}{Long-Term Evolution}
+\newacronym{nsa}{NSA}{Non-standalone}
+\newacronym{4g}{4G}{4th generation mobile network}
+\newacronym{5g}{5G}{5th generation mobile network}
 
 \makeatletter         
 \renewcommand\maketitle{
@@ -50,7 +52,7 @@
 % Vision: why and what is this topic?
 Since around 2010, mobile communication has been a vital part of everyday-life for most of the western world.
 In 2007, we saw the launch of the iPhone, arguably one of the most influencial inventions in the mobile market ever.
-With the introduction of 4G in late 2009 came a massive increase in mobile communication over the internet.
+With the introduction of \acrfull{4g} in late 2009 came a massive increase in mobile communication over the internet.
 For almost one and a half decades, more and more technology has been invented for the mobile phone market.
 
 In addition, the Oculus Rift has ushered in the reincarnation of the idea of Virtual Reality and spacial computing, plainly meaning the usage of 3D-space as a way to distribute user interfaces.
@@ -90,7 +92,7 @@ The paper also outlines challenges for the construction of site power supply and
 % - outlines the changes between 4G and 5G
 % - proposes sleep mode switching policies
 % - comparison
-\citep{DynamicSleepModeControl} outline the technical changes going from 4G to 5G infrastructure.
+\citep{DynamicSleepModeControl} outline the technical changes going from \acrshort{4g} to \acrfull{5g} infrastructure.
 Based on those findings, they propose multiple sleep mode switching policies and gives a comparison between them.
 
 \section{Environmental footprint}\label{sec:energyfootprint}
@@ -203,8 +205,8 @@ Of the gross consumption, 46\% have been from renewable energy sources \citep{St
 %   inklusive:LTE 800 MHz, GSM 900 MHz, GSM/LTE 1800 MHz, UMTS/LTE 2600 MHz, 5G 3600 MHz
 
 According to \cite{BSStandort}, a build-site for single \acrshort{bs} needs a power supply that can deal with a constant load of 3kW.
-In \cite{vodafoneAusbau}, Vodafone states to have have built 14200 sites with at least some 5G capabilities and there are 41945 5G \acrlong{bs}s in Germany \citep{5gBS}.
-The exact number of \acrshort*{bs} is probably difficult to determine because there are only very few public technical reports on the expansion to 5G and most of the marketing publications online have no technical information as to which \enquote{5G \acrlong{bs}s} include sites with LTE functionality used for NSA mode 5G New Radio.
+In \cite{vodafoneAusbau}, Vodafone states to have have built 14200 sites with at least some \acrshort{5g} capabilities and there are 41945 \acrshort{5g} \acrlong{bs}s in Germany \citep{5gBS}.
+The exact number of \acrshort*{bs} is probably difficult to determine because there are only very few public technical reports on the expansion to \acrshort{5g} and most of the marketing publications online have no technical information as to which \enquote{\acrshort{5g} \acrlong{bs}s} include sites with \acrfull{lte} functionality used for \acrfull{nsa} mode \acrshort{5g} New Radio.
 
 \begin{figure}[h]
   \centering
@@ -216,10 +218,10 @@ The exact number of \acrshort*{bs} is probably difficult to determine because th
 \end{figure}
 
 However, it is known that there are 71510 \enquote{mobile phone sites} in Germany.
-This number includes radio sites with LTE (800 MHz), GSM (900 MHz), GSM/LTE (1800 MHz), UMTS/LTE (2600 MHz) and 5G (3600 MHz) equipment.
+This number includes radio sites with \acrshort{lte} (800 MHz), GSM (900 MHz), GSM/\acrshort{lte} (1800 MHz), UMTS/\acrshort{lte} (2600 MHz) and \acrshort{5g} (3600 MHz) equipment.
 Figure~\ref{fig:EMFdistribution} shows the distribution of number of radio systems on those sites \citep{EMF}.
 
-Taking 41945 5G \acrlong{bs}s and 3kW as our reference number of units and power consumption for 5G under full load, it can be estimated that the total grid load is 125.835 GW.
+Taking 41945 \acrshort{5g} \acrlong{bs}s and 3kW as our reference number of units and power consumption for \acrshort{5g} under full load, it can be estimated that the total grid load is 125.835 GW.
 Assuming full load all year around the maximum power consumption can be calculated with 1.1023146 TWh per year or 26.28 MWh per site and year.
 This results in 0.19969\% of the gross and 0.224687\% of the net national power consumption.
 0.19234\% of the national electrical power production is used up by the base stations in the Germany.
@@ -229,7 +231,6 @@ To adapt for a complete coverage in the future, the number of the above paragrap
 Also, this calculation assumes a full usage of the power supply at all times without idle time or down time.
 
 \subsection{User Equipment}\label{subsec:UEInfluence}
-% TODO: How much do user equipments consume?
 % What percentage of the national power consumption / production is that? 
 % 169 Millionen Mobilfunkanschlüsse in Deutschland https://de.statista.com/statistik/daten/studie/3907/umfrage/mobilfunkanschluesse-in-deutschland/
 % 8.59 Milliarden Mobilfunkanschlüsse in der Welt https://www.weforum.org/agenda/2023/04/charted-there-are-more-phones-than-people-in-the-world/
@@ -253,7 +254,7 @@ In Germany, the number of smartphone users in 2022 was 67.6 million \citep{smart
 That only describes the mobile phone subscriptions for human-used devices.
 The total count of subscriptions including \acrshort{m2m} devices is 169 million \citep{totalmobilesubscriptionsDeutschland}, meaning about 37.93\% of mobile communication connections are \acrshort{m2m} communication.
 These number describe the total number of SIM-cards in Germany without specifying wether or not the activity coming from those connections classify as \enquote{modern}.
-Only 44.67\% of the total number of SIM-Cards in circulation in Germany (77.5 million \citep{simCardsDeutschland}) have some form of LTE functionality (see Figure~\ref{fig:simdistribution}).
+Only 44.67\% of the total number of SIM-Cards in circulation in Germany (77.5 million \citep{simCardsDeutschland}) have some form of \acrshort{lte} functionality (see Figure~\ref{fig:simdistribution}).
 
 \begin{figure}[h]
   \begin{tikzpicture}
@@ -261,22 +262,22 @@ Only 44.67\% of the total number of SIM-Cards in circulation in Germany (77.5 mi
   \end{tikzpicture}
 
   \begin{tikzpicture}
-    \pie[sum=auto, after number={\space M}, radius=1.7, text=legend, color={orange, yellow}]{77.5/SIM-cards with LTE capabilities (44.67 \%), 93.5/SIM-cards without LTE capabilities (55.33 \%)}
+    \pie[sum=auto, after number={\space M}, radius=1.7, text=legend, color={orange, yellow}]{77.5/SIM-cards with \acrshort{lte} capabilities (44.67 \%), 93.5/SIM-cards without \acrshort{lte} capabilities (55.33 \%)}
   \end{tikzpicture}
 
-  \caption{Distribution of SIM-cards in Germany between \acrlong*{m2m} and human-used devices and between cards with and without LTE capabilities (LTE or more modern), totaling 169 million (M) cards}
+  \caption{Distribution of SIM-cards in Germany between \acrlong*{m2m} and human-used devices and between cards with and without \acrshort{lte} capabilities (\acrshort{lte} or more modern), totaling 169 million (M) cards}
   \label{fig:simdistribution}
 \end{figure}
 
 When it comes to the devices used for mobile communication, the situation is opaque.
 Very little is known about the devices in use and their specifications in \acrshort{m2m} communication (47.93\%).
 There only is some information of human-used devices that helps estimate the number of eligable and active devices.
-The first smartphone with 5G capabilities entered the German market in march of 2019 \citep{smartphonemodells5G}.
+The first smartphone with \acrshort{5g} capabilities entered the German market in march of 2019 \citep{smartphonemodells5G}.
 Since the beginning of 2019, 87.9 million smartphones have been sold in Germany until 2022 (22.1 million in 2019, 22 million in 2020, 22.2 in 2021 and 21.6 million in 2022) \citep{smartphonenutzungDeutschland}.
-The share of smartphones with 5G capabilities is unknown.
+The share of smartphones with \acrshort{5g} capabilities is unknown.
 
 The number of other human-used devices is about as opaque as the \acrshort{m2m} devices.
-It is known that there have been only 19 models of 5G-capable tablets in the German market (beginning in November 2021) \citep{tabletmodels} and 3 5G-capable laptop models \citep{laptopmodels}.
+It is known that there have been only 19 models of \acrshort{5g}-capable tablets in the German market (beginning in November 2021) \citep{tabletmodels} and 3 \acrshort{5g}-capable laptop models \citep{laptopmodels}.
 The number of other \acrlong{ue}, e.g. wearables, remains unclear.
 
 All this makes the calculation of the power demand by \acrlong{ue} very difficult.
@@ -284,8 +285,8 @@ It is not possible to make a reliable and accurate statement about the power con
 However, it is possible to make an estimation under some assumptions.
 Firstly, the assumption will be made that the average power consumption of modern smartphones is a good estimation for the power consumption of any \acrshort{ue}.
 In order to reconsile with this assumption two calculations will be made: One for all devices and one only for human-used devices.
-Secondly, the share of SIM-cards with/without LTE capability remains a constant throughout the \acrlong{ue} space, meaning the share of 44.67\% can be used across all devices types.
-This seems a good assumption because it is unclear with the currently available information to know more about the actual situation and it seems improbable that all 64.096 million \acrshort{m2m} devices have SIM-cards with LTE capabilities, leaving only 11.404 million for human-used devices.
+Secondly, the share of SIM-cards with/without \acrshort{lte} capability remains a constant throughout the \acrlong{ue} space, meaning the share of 44.67\% can be used across all devices types.
+This seems a good assumption because it is unclear with the currently available information to know more about the actual situation and it seems improbable that all 64.096 million \acrshort{m2m} devices have SIM-cards with \acrshort{lte} capabilities, leaving only 11.404 million for human-used devices.
 
 
 With those assumptions established and the information that the charging of a smartphone consumes an average of 3.65 kWh per year (10 Wh per over-night charge for 365 days per year) \citep{smartphonecharge}, the estimation of the power consumption of \acrshort{ue} is as follows:
