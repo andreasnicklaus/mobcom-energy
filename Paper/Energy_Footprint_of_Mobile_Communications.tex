@@ -1,14 +1,15 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage[english, ngerman]{babel}
+\usepackage[autostyle]{csquotes}
 \usepackage{natbib}
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage[raggedrightboxes]{ragged2e}
-\usepackage{csquotes}
 \usepackage{pgf-pie}
 \usepackage{pgfplots}
 \usepackage[acronym, toc, numberedsection]{glossaries}
+\usepackage{pgfplots}
 
 \makenoidxglossaries
 \newacronym{bs}{BS}{Radio Base Station}
@@ -16,6 +17,7 @@
 \newacronym{m2m}{M2M}{Machine-to-Machine}
 \newacronym{lte}{LTE}{Long-Term Evolution}
 \newacronym{nsa}{NSA}{Non-standalone}
+\newacronym{3g}{3G}{3rd generation mobile network}
 \newacronym{4g}{4G}{4th generation mobile network}
 \newacronym{5g}{5G}{5th generation mobile network}
 \newacronym{aau}{AAU}{Active Antenna Unit}
@@ -24,6 +26,11 @@
 \newacronym{ac}{AC}{Air Conditioning}
 \newacronym{cu}{CU}{Centralized Unit}
 \newacronym{du}{DU}{Destributed Unit}
+\newacronym{nrl}{NR-Light}{New Radio Light}
+\newacronym{redcap}{RedCap}{Reduced Capability NR}
+\newacronym{nr}{NR}{New Radio}
+\newacronym{d2d}{D2D}{Device-to-Device}
+\newacronym{n2d}{N2D}{Network-to-Device}
 
 \makeatletter         
 \renewcommand\maketitle{
@@ -44,13 +51,13 @@
 \maketitle
 
 \begin{abstract}
-  deutsche Version
+  deutsche Version \enquote{test}
 \end{abstract}
 
 \selectlanguage{english}
 
 \begin{abstract}
-  englische Version
+  englische Version \enquote{test}
 \end{abstract}
 
 \tableofcontents
@@ -156,9 +163,61 @@ From the category \enquote{Climate and Energy}, the indicator Climate change and
 The effect of \acrshort{bs} on the climate change is only noticable through the usage of electicity which is inspected under the other indicators of the category.
 
 The category \enquote{Environment and health} only yields the relevant indicators air quality and noise pullution, both mainly dependent on the energy source of \acrshort{bs} and \acrshort{ue}.
-% TODO: noise tests
 The other indicators of the category will be ignore because they are not applicable to mobile communications.
 The positive effect that mobile communications might have towards the management of traffic and both freight and public transport are not inspected in this paper.
+
+Preliminary tests of eight \acrlong{bs}s in Eislingen/Fils, Germany, have shown that none of the examined systems contribute to audible noise pollution.
+Five \acrshort{bs}s have been measured with environment noise.
+These measurements show an average of approximately 40 dBA with an average distance to the antenna systems of 22 meters.
+Figure~\ref{fig:noise-measurements} shows the minimal, maximal and average noise level of those measurements.
+Although all units are visible from street level and some have a maximum noise level that would be descernible from background noise, all measurements above 50 dbA are caused by their location, e.g. industry buildings or a train station.
+No units reach a noise level above 60dbA.
+Based on this data, noise pollution is considered no factor in the environmental impact of \acrlong{bs}s.
+
+\pgfplotstableread[row sep=\\,col sep=&]{
+    unit & 751424  & 27012311 & 752135 & 750340 & 275186 \\
+    min.  & 40      & 26.5     & 29.2   & 37.2   & 40.8 \\
+    avg.  & 49.9    & 27.5     & 31.5   & 46.2   & 43 \\
+    max.  & 58.6    & 30.4     & 33.8   & 54.2   & 47.6 \\
+    }\noiseData
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+            ybar,
+            % ymax=300,
+            symbolic x coords={min., avg., max.},
+            xtick=data,
+            % nodes near coords,
+            bar width=.25cm,
+            enlarge x limits=0.3,
+            % enlarge y limits=0.3,
+            legend style={
+              at={(1.5,1)},
+              anchor=north,
+              legend columns=1
+            },
+            % ylabel={dbA},
+            width=.6\textwidth,
+            % height=.35\textwidth,
+        ]
+        \addplot table[x=unit,y=27012311]{\noiseData};
+        \addplot table[x=unit,y=752135]{\noiseData};
+        \addplot table[x=unit,y=275186]{\noiseData};
+        \addplot table[x=unit,y=750340]{\noiseData};
+        \addplot table[x=unit,y=751424]{\noiseData};
+        \legend{
+          Lerchenweg 2 (27012311),
+          Vogelgartenstr. 10 (752135),
+          Teckstr. 4 (275186),
+          Ulmer Str. 46 (750340),
+          Schillerstr. 23-25 (751424),
+        }
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Noise levels of measured \acrshort{bs}s in 70354 Eislingen/Fils, Germany. The legend includes the \enquote{Standortbescheinigungs-Nr.} of the unit~\citep{EMFKarte}. \enquote{Teckstr. 4} is the only radio tower.}\label{fig:noise-measurements}
+\end{figure}
 
 This paper assumes that only a insignificant number of \acrshort{bs} are built on agricultural land and that once built these \acrshort{bs} produce next to no waste at all.
 Therefore the indicators waste generation and organic farming can be left out of this paper.
@@ -301,7 +360,7 @@ The 104.904 million human-used devices in Germany consume 382.8996 GWh per year 
 Of those, we are only concerned with the devices participating in modern mobile communications (44.67\%), bringing those numbers down to 171.041 and 275.547 GWh respectively.
 
 \section{Sources of energy consumption}\label{sec:energyconsumption}
-In order to outline the opportunities for saving energy, this chapter gives details about what parts of \acrlong{bs}s and \acrlong{ue} consumes most of the power.
+In order to outline the opportunities for saving energy, this chapter gives details about what parts of \acrlong{bs}s and \acrlong{ue} consume most of the power.
 The following chaper~\ref{sec:opportunities} then describes five technologies that either increase efficiency or save power entirely.
 
 \subsection{Base Stations}\label{subsec:BSConsumption}
@@ -311,7 +370,7 @@ The following chaper~\ref{sec:opportunities} then describes five technologies th
 The parts of a modern \acrshort{bs} can be seperated into several units.
 The antenna system and \acrfull{rru} are capable of convertimg and sending a baseband signal as a radio signal and the \acrfull{bbu} modulates a signal from and onto the used radio frequency.
 The physical support system includes all components to keep the antenna system, \acrshort{rru} and \acrshort{bbu} running, e.g. the power supply, backup batteries, transmittion equipment like cables and converters and \acrfull{ac}.
-Due to the current situation, in which the \acrshort{bbu}s can have some distance to the antenna systems and \acrshort{rru} and can supply more than one, the antenna system and \acrshort{rru} are often combined to a \acrfull{aau} and \acrshort{bbu}s are differentiate between a \acrfull{cu} and a \acrfull{du}.
+Due to the current situation, in which the \acrshort{bbu}s can have some distance to the antenna systems and \acrshort{rru} and can supply more than one, the antenna system and \acrshort{rru} are often combined to a \acrfull{aau} and \acrshort{bbu}s are differentiated between \acrfull{cu} and \acrfull{du}.
 
 \begin{figure}[h]
   \centering
@@ -371,23 +430,80 @@ Due to the current situation, in which the \acrshort{bbu}s can have some distanc
 Figure~\ref{fig:BSConsumption} shows the power consumption by \acrshort{bs} unit and traffic load and the power consumption of each unit in a deep sleep mode.
 The power consumption of the the \acrshort{ac} is shown seperately from the other physical support equipment because the rest has a power consumption of next to zero.  
 Note that the power consumption of the \acrshort*{bbu} and the \acrshort{ac} are static and more importantly independent from the traffic load.
-For the \acrlong{ac} that cannot be explained with the very specific demand of \acrlong{bs}s to disable the \acrshort{ac} on low traffic times or when the environment is cold anyways, which is sensible.
-On the other hand, the demand for power saving dependent on traffic load usually concerns short time intervals, e.g. few milliseconds or seconds, which is shorter than the average reaction or effect time of a \acrlong{ac} unit.
+For the \acrlong{ac}, \acrlong{bs}s have the specific demand of disabling the \acrshort{ac} on low traffic times or when the environment is cold anyways, which is sensible.
+On the other hand, the demand for power saving to be dependent on traffic load usually concerns short time intervals, e.g. few milliseconds or seconds, which is shorter than the average reaction or effect time of a \acrlong{ac} unit.
+
+Because this seems obvious and managable during research, the question is raised whether this can be true.
+During research, no answer was found on this question and no operator of \acrshort{bs} was willing to answer questions.
 
 \subsection{User Equipment}\label{subsec:UEConsumption}
-% TODO: What is in a user equipment?
 % What parts are responsible for most of the power consumption
+% CPU: 500-2000 mW (Peak 3000 mW) or 55 - 612 mW depending on usage
+% Display: 400 or 1000-1500 mW or 63 - 527.05 mW depending on usage (13.86 mW in screensaver mode)
+% Active cell radio: 800 mW
+% Bluetooth: 100 mW (Usage: 12 - 432 mW)
+% Accelerometer: 21 mw
+% Gyro: 130 or 25 mW
+% Mircrophone: 101 mW
+% GPS: 176 or 25 mW
+% Camera up to 1000mW
+% Data Writing: 400 or 580 mW per MB (avg)
+% Downloading through WiFi @4.5Mbps: 1450 mW
+% 3G Downaload @1Mbps: 1400 mW
+% 3G voice call: 1224.3 - 1265.7 mW
 
+The power consumption of a modern smartphone varies largely based on the used hardware parts and software optimizations.
+While some sources from the past decade claim the power usage of a CPU to vary between 500 and 2000 mW \citep{smartphoneEnergyConsumption}, other sources see these numbers between 55 and 612 mW \citep{smartphoneEnergySurvey} or 5.1 nd 11.1 mW \citep{mobileEnergyConsumption} (note that different CPU models were used in the sources).
+This discrepency continues with other components like the display (400 mW on average \citep{smartphoneEnergyConsumption}, 1000-1500 mW \citep{powerUsageSmartphonesQnovo} or 63-527.05 mW \citep{smartphoneEnergySurvey}) or writing data to storage (400 mW per MB \citep{powerUsageSmartphonesQnovo} or 580 mW per MB \citep{smartphoneEnergySurvey}).
+
+In general, the power consumption caused by mobile communication or downloading data through \acrshort{3g} (at 1 Mbps) or WiFi (at 4.5 Mbps) is independent from other hardware components \citep{smartphoneEnergySurvey}.
+The power draw of an active cell radio is 800 mW on average \citep{smartphoneEnergyConsumption}.
+This results in a power usage of 1400 mW and 1450 mW for \acrshort{3g} download or WiFi download respectively (including writing the data to storage) \citep{smartphoneEnergySurvey}.
+
+\cite{profilingMobilePower} hint at the possibility to save energy through software.
+The paper shows that it is possible to save power based on energy profile setting and reduce the consumption by a factor between 2 and 7.
+
+Because the numbers vary this much by used hardware components and usage and because further research into this topic will go beyond the scope of this paper, the power consumption of \acrlong{ue} is not further examined.
 
 \section{Energy saving opportunities}\label{sec:opportunities}
 % What possibilities are/will be deployable for power consumption?
-
+This chapter goes over oppertunities and gives an overview over 5 solutions to either increase the efficiency of mobile communications or to save power.
+Each section gives an introduction into how the solution works and how it can improve the environmental impact of its participants.
 
 \subsection{Giga-MIMO}\label{subsec:gigamimo}
+Giga-MIMO increases the number of concurrent connections between transmitting antenna and receiving \acrlong{ue} devices through beamforming.
+It is basically Massive MIMo on another frequency band (7-16 GHz) and increased range of 500 meters. % TODO: source
+
+This technology does not decrease the power consumption of the \acrlong{bs} but rather improves the capacity and therefore the efficiency of the antenna system.
+It increases the \enquote{bang for the buck} on unfull traffic load and the battery lifetime of the \acrshort{bs} because the batteries discharge completely less often by switching off parts of the Giga-MIMO antennas.
+
+For 6G, the goal is to make better use of Giga-MIMO and improve the technology.
+
 \subsection{NR-Light}\label{subsec:nrlight}
-\subsection{Reduced Capability NR}\label{subsec:RedCap}
 % Lower Transmit Power for IoT devices
+\acrfull{nrl} is a standard in communication between \acrshort{bs} and \acrshort{ue} with less capabilities in capacity (150 Mbps DL / 50 Mbps UL, 13-30ms latency), complexity and power usage.
+I uses the software improvements of \acrshort{5g} with less hardware capabilities.
+With less demand for technological advancements comes a lower power consumption.
+Broad usage of \acrshort{nrl} reduces the power consumption of a \acrlong{bs} and increases the efficiency of the antenna system for devices with reduces demand.
+
+\subsection{Reduced Capability NR}\label{subsec:RedCap}
+\acrshort{nrl} enables reduced power consumption through reduced capabilities within an \acrshort{bs}, whereas \acrfull{redcap} reduces power consumption through reduced capabilities within the \acrshort{ue}.
+\acrshort{redcap} used a smaller maximum device bandwith, fewer needed device receive branches, fewer downlink MIMO layers, a smaller downlink modulation order and fewer options for duplex operations.
+It improves the efficiency of \acrshort{ue} with fewer demand of the communication systems, e.g. wearables and drones.
+\acrshort{redcap} devices can use \acrshort{5g} infrastructure with less capable and power-intensive hardware. 
+
 \subsection{Sidelink enhancements}\label{subsec:sidelink}
+\acrshort{nr} Sidelink is based on LTE Sidelink and enables \acrfull{d2d} communication instead of \acrfull{n2d} communication for \acrshort{ue}.
+Therefore \acrshort{nr} Sidelink enables Distributed Networking as well as mobile \enquote{Distributed Base Stations}.
+This means that parts of the functions of a \acrshort{bs}, such as connection management, are handled by the \acrshort{ue}.
+\acrlong{d2d} also enables chained connections where devices act as deputy \acrlong{bs}s, which improves capabilities for fast construction of networks, e.g. for emergency services like fire departments on duty.
+
+\acrlong{d2d} communication allows for the \acrshort{bs} to be taken out of the loop and save energy.
+It is possible to use \acrshort{nr} Sidelink connections for all \acrlong{ue}, but not all \acrshort{ue} supports conversion between \acrshort{n2d} and \acrshort{d2d} communication and serving as a deputy \acrshort{bs}.
+
+\acrshort{nr} Sidelink improves the efficiency of \acrlong{bs}s through greater range, increased capacity per \acrshort{bs} connection and data offloading from the \acrshort{bs}.
+It decreases the power consumption of the \acrshort{bs} by \textbf{not} going through the \acrshort{bs}.
+
 \subsection{Sleep Modes}\label{subsec:sleep}
 
 \section{Conclusion}\label{sec:conclusion}
@@ -399,7 +515,7 @@ On the other hand, the demand for power saving dependent on traffic load usually
 \clearpage
 
 \appendix
-% \glsaddall
+\glsaddall
 \printnoidxglossary[type=\acronymtype,nonumberlist]
 
 % \nocite{*}
