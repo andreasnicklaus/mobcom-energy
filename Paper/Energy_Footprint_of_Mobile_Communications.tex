@@ -17,9 +17,10 @@
 \newacronym{m2m}{M2M}{Machine-to-Machine}
 \newacronym{lte}{LTE}{Long-Term Evolution}
 \newacronym{nsa}{NSA}{Non-standalone}
-\newacronym{3g}{3G}{3rd generation mobile network}
-\newacronym{4g}{4G}{4th generation mobile network}
-\newacronym{5g}{5G}{5th generation mobile network}
+\newacronym{3g}{3G}{3\textsuperscript{rd} generation mobile network}
+\newacronym{4g}{4G}{4\textsuperscript{th} generation mobile network}
+\newacronym{5g}{5G}{5\textsuperscript{th} generation mobile network}
+\newacronym{6g}{6G}{6\textsuperscript{th} generation mobile network}
 \newacronym{aau}{AAU}{Active Antenna Unit}
 \newacronym{bbu}{BBU}{Building Baseband Unit}
 \newacronym{rru}{RRU}{Remote Radio Unit}
@@ -31,6 +32,11 @@
 \newacronym{nr}{NR}{New Radio}
 \newacronym{d2d}{D2D}{Device-to-Device}
 \newacronym{n2d}{N2D}{Network-to-Device}
+\newacronym{dl}{DL}{Downlink}
+\newacronym{ul}{UL}{Uplink}
+\newacronym{cpu}{CPU}{Central Processing Unit}
+\newacronym{wifi}{WiFi}{Wireless Fidelity}
+\newacronym{mimo}{MIMO}{multiple-input and multiple-output}
 
 \makeatletter         
 \renewcommand\maketitle{
@@ -44,21 +50,33 @@
 
 \bibliographystyle{plainnat}
 
-\title{Energy Footprint of Mobile communications in the 21st century}
+\title{Energy Footprint of Mobile communications in the 21\textsuperscript{st} century}
 \author{Andreas Nicklaus}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-  deutsche Version \enquote{test}
+  Diese Arbeit untersucht die Umweltbelastung des Mobilfunks im 21. Jahrhundert, wobei der Schwerpunkt auf Deutschland liegt.
+  Seit dem Aufkommen von Mobilfunktechnologien, insbesondere mit der Verbreitung von Smartphones und dem Übergang zu 4G- und 5G-Netzen, ist der Energieverbrauch von Basisstationen und Nutzergeräten deutlich gestiegen.
+  Durch eine Analyse der nationalen Energiedaten, der Dynamik der Basisstationen und der Trends bei den Nutzergeräten beleuchtet das Papier die Umweltauswirkungen der Mobilfunktechnologien.
+  Zu den wichtigsten Erkenntnissen gehören der beträchtliche Beitrag erneuerbarer Energiequellen zur Stromerzeugung, der Energiebedarf der Komponenten von Basisstationen und die Herausforderungen bei der Schätzung des Stromverbrauchs von Nutzergeräten.
+  Das Papier zeigt auch Möglichkeiten zur Energieeinsparung auf und betont die Bedeutung nachhaltiger Praktiken bei der Abschwächung der Umweltauswirkungen der mobilen Kommunikation.
+  Um energieeffiziente und umweltverträgliche Mobilkommunikationssysteme voranzutreiben, sind weitere Forschung und Zusammenarbeit unerlässlich.
 \end{abstract}
 
 \selectlanguage{english}
-
 \begin{abstract}
-  englische Version \enquote{test}
+  The paper investigates the energy footprint of mobile communications in the 21\textsuperscript{st} century, with a focus on the context of Germany.
+  Since the advent of mobile communication technologies, especially with the proliferation of smartphones and the transition to 4G and 5G networks, there has been a significant increase in energy consumption associated with base stations and user equipment.
+  Through an analysis of national energy data, base station dynamics, and user equipment trends, the paper sheds light on the environmental implications of mobile communication technologies.
+  Key findings include the substantial contribution of renewable energy sources to electricity production, the energy demands of base station components, and the challenges in estimating the power consumption of user equipment.
+  The paper also identifies opportunities for energy saving and emphasizes the importance of sustainable practices in mitigating the environmental impact of mobile communications.
+  Moving forward, continued research and collaboration are essential for advancing energy-efficient and environmentally responsible mobile communication systems.
 \end{abstract}
+
+\noindent\textbf{Dislaimer:} This paper has been written with the help of AI tools for translating sources and outlining parts of the written content.
+All content has been written or created by the author unless marked otherwise.
 
 \tableofcontents
 
@@ -124,7 +142,7 @@ When we want to analyze the impact something has on the environment, we need to 
 \citep{Umweltindikatoren} gives 27 general indicators as to what those metrics have to reflect on and are grouped into four categories.
 Table~\ref{tab:indicators} show all indicators within its category.
 
-\begin{table}[ht]
+\begin{table}[t]
   \centering
   \begin{tabular}{p{0.21\linewidth}|p{0.21\linewidth}|p{0.21\linewidth}|p{0.21\linewidth}}
     \textbf{Climate and Energy} & \textbf{Nature and landscape} & \textbf{Environment and health} & \textbf{Resources and efficiency}\\
@@ -240,7 +258,7 @@ This means that only four of the 27 indicators are relevant to mobile communicat
   \item \textbf{Resource productivity}: Ratio of gross domestic product to primary energy consumption or raw material consumption in relation to a base year.
 \end{enumerate}
 
-The upcoming chapters will only cover those four topics.
+The upcoming chapters will only cover the energy consumption and share of renewable energies because the recycling rate and resource productivity outgrow the scope of this paper.
 
 \section{Numbers: mobile communication and national power consumption}\label{sec:influence}
 % Narrowing down the topic "environment" to "energy and power" to electricity
@@ -292,7 +310,7 @@ Assuming full load all year around the maximum power consumption can be calculat
 This results in 0.19969\% of the gross and 0.224687\% of the net national power consumption.
 0.19234\% of the national electrical power production is used up by the base stations in the Germany.
 
-Note that the number of 5G base stations in 2022 was enough to \enquote{only} cover 79\% of the nation's area \citep{5Gausbau}.
+Note that the number of \acrshort{5g} base stations in 2022 was enough to \enquote{only} cover 79\% of the nation's area \citep{5Gausbau}.
 To adapt for a complete coverage in the future, the number of the above paragraph will be multiplied by factor of 1.266 (overlap not included).
 Also, this calculation assumes a full usage of the power supply at all times without idle time or down time.
 
@@ -322,9 +340,9 @@ The total count of subscriptions including \acrshort{m2m} devices is 169 million
 These number describe the total number of SIM-cards in Germany without specifying wether or not the activity coming from those connections classify as \enquote{modern}.
 Only 44.67\% of the total number of SIM-Cards in circulation in Germany (77.5 million \citep{simCardsDeutschland}) have some form of \acrshort{lte} functionality (see Figure~\ref{fig:simdistribution}).
 
-\begin{figure}[h]
+\begin{figure}[t]
   \begin{tikzpicture}
-    \pie[sum=auto, after number={\space M}, radius=1.7, text=legend, color={violet!60, green}]{64.096/SIM-cards in \acrshort*{m2m} devices (37.93 \%), 104.904/SIM-cards in human-used devices (62.07 \%)}
+    \pie[sum=auto, after number={\space M}, radius=1.7, text=legend, color={violet!60, green}]{64.096/SIM-cards in \acrshort{m2m} devices (37.93 \%), 104.904/SIM-cards in human-used devices (62.07 \%)}
   \end{tikzpicture}
 
   \begin{tikzpicture}
@@ -429,7 +447,7 @@ Due to the current situation, in which the \acrshort{bbu}s can have some distanc
 
 Figure~\ref{fig:BSConsumption} shows the power consumption by \acrshort{bs} unit and traffic load and the power consumption of each unit in a deep sleep mode.
 The power consumption of the the \acrshort{ac} is shown seperately from the other physical support equipment because the rest has a power consumption of next to zero.  
-Note that the power consumption of the \acrshort*{bbu} and the \acrshort{ac} are static and more importantly independent from the traffic load.
+Note that the power consumption of the \acrshort{bbu} and the \acrshort{ac} are static and more importantly independent from the traffic load.
 For the \acrlong{ac}, \acrlong{bs}s have the specific demand of disabling the \acrshort{ac} on low traffic times or when the environment is cold anyways, which is sensible.
 On the other hand, the demand for power saving to be dependent on traffic load usually concerns short time intervals, e.g. few milliseconds or seconds, which is shorter than the average reaction or effect time of a \acrlong{ac} unit.
 
@@ -453,12 +471,12 @@ During research, no answer was found on this question and no operator of \acrsho
 % 3G voice call: 1224.3 - 1265.7 mW
 
 The power consumption of a modern smartphone varies largely based on the used hardware parts and software optimizations.
-While some sources from the past decade claim the power usage of a CPU to vary between 500 and 2000 mW \citep{smartphoneEnergyConsumption}, other sources see these numbers between 55 and 612 mW \citep{smartphoneEnergySurvey} or 5.1 nd 11.1 mW \citep{mobileEnergyConsumption} (note that different CPU models were used in the sources).
+While some sources from the past decade claim the power usage of a \acrshort{cpu} to vary between 500 and 2000 mW \citep{smartphoneEnergyConsumption}, other sources see these numbers between 55 and 612 mW \citep{smartphoneEnergySurvey} or 5.1 nd 11.1 mW \citep{mobileEnergyConsumption} (note that different \acrshort{cpu} models were used in the sources).
 This discrepency continues with other components like the display (400 mW on average \citep{smartphoneEnergyConsumption}, 1000-1500 mW \citep{powerUsageSmartphonesQnovo} or 63-527.05 mW \citep{smartphoneEnergySurvey}) or writing data to storage (400 mW per MB \citep{powerUsageSmartphonesQnovo} or 580 mW per MB \citep{smartphoneEnergySurvey}).
 
-In general, the power consumption caused by mobile communication or downloading data through \acrshort{3g} (at 1 Mbps) or WiFi (at 4.5 Mbps) is independent from other hardware components \citep{smartphoneEnergySurvey}.
+In general, the power consumption caused by mobile communication or downloading data through \acrshort{3g} (at 1 Mbps) or \acrshort{wifi} (at 4.5 Mbps) is independent from other hardware components \citep{smartphoneEnergySurvey}.
 The power draw of an active cell radio is 800 mW on average \citep{smartphoneEnergyConsumption}.
-This results in a power usage of 1400 mW and 1450 mW for \acrshort{3g} download or WiFi download respectively (including writing the data to storage) \citep{smartphoneEnergySurvey}.
+This results in a power usage of 1400 mW and 1450 mW for \acrshort{3g} download or \acrshort{wifi} download respectively (including writing the data to storage) \citep{smartphoneEnergySurvey}.
 
 \cite{profilingMobilePower} hint at the possibility to save energy through software.
 The paper shows that it is possible to save power based on energy profile setting and reduce the consumption by a factor between 2 and 7.
@@ -468,33 +486,33 @@ Because the numbers vary this much by used hardware components and usage and bec
 \section{Energy saving opportunities}\label{sec:opportunities}
 % What possibilities are/will be deployable for power consumption?
 This chapter goes over oppertunities and gives an overview over 5 solutions to either increase the efficiency of mobile communications or to save power.
-Each section gives an introduction into how the solution works and how it can improve the environmental impact of its participants.
+Each section gives a short introduction into how the solution works and how it can improve the environmental impact of its participants.
 
 \subsection{Giga-MIMO}\label{subsec:gigamimo}
-Giga-MIMO increases the number of concurrent connections between transmitting antenna and receiving \acrlong{ue} devices through beamforming.
-It is basically Massive MIMo on another frequency band (7-16 GHz) and increased range of 500 meters. % TODO: source
+Giga-\acrshort{mimo} increases the number of concurrent connections between transmitting antenna and receiving \acrlong{ue} devices through beamforming.
+It uses another frequency band than massive \acrshort{mimo} (7-16 GHz) and increased range \citep{3gpp17}.
 
 This technology does not decrease the power consumption of the \acrlong{bs} but rather improves the capacity and therefore the efficiency of the antenna system.
-It increases the \enquote{bang for the buck} on unfull traffic load and the battery lifetime of the \acrshort{bs} because the batteries discharge completely less often by switching off parts of the Giga-MIMO antennas.
+It increases the \enquote{bang for the buck} on unfull traffic load and the battery lifetime of the \acrshort{bs} because the batteries discharge completely less often by switching off parts of the Giga-\acrshort{mimo} antennas \citep{qualcomm2022}.
 
-For 6G, the goal is to make better use of Giga-MIMO and improve the technology.
+For \acrshort{6g}, the goal is to make better use of Giga-\acrshort{mimo} and improve the technology \citep{3gpp17}.
 
 \subsection{NR-Light}\label{subsec:nrlight}
 % Lower Transmit Power for IoT devices
-\acrfull{nrl} is a standard in communication between \acrshort{bs} and \acrshort{ue} with less capabilities in capacity (150 Mbps DL / 50 Mbps UL, 13-30ms latency), complexity and power usage.
+\acrfull{nrl} is a standard in communication between \acrshort{bs} and \acrshort{ue} with less capabilities in capacity, complexity and power usage.
 I uses the software improvements of \acrshort{5g} with less hardware capabilities.
 With less demand for technological advancements comes a lower power consumption.
-Broad usage of \acrshort{nrl} reduces the power consumption of a \acrlong{bs} and increases the efficiency of the antenna system for devices with reduces demand.
+Broad usage of \acrshort{nrl} reduces the power consumption of a \acrlong{bs} and increases the efficiency of the antenna system for devices with reduces demand \citep{3gpp17}.
 
 \subsection{Reduced Capability NR}\label{subsec:RedCap}
-\acrshort{nrl} enables reduced power consumption through reduced capabilities within an \acrshort{bs}, whereas \acrfull{redcap} reduces power consumption through reduced capabilities within the \acrshort{ue}.
-\acrshort{redcap} used a smaller maximum device bandwith, fewer needed device receive branches, fewer downlink MIMO layers, a smaller downlink modulation order and fewer options for duplex operations.
+\acrshort{nrl} enables reduced power consumption through reduced capabilities within an \acrshort{bs}, whereas \acrfull{redcap} reduces power consumption through reduced capabilities within the \acrshort{ue} (150 Mbps \acrshort{dl} / 50 Mbps \acrshort{ul}, 13-30ms latency).
+\acrshort{redcap} used a smaller maximum device bandwith, fewer needed device receive branches, fewer downlink \acrshort{mimo} layers, a smaller downlink modulation order and fewer options for duplex operations \citep{3gpp17}.
 It improves the efficiency of \acrshort{ue} with fewer demand of the communication systems, e.g. wearables and drones.
 \acrshort{redcap} devices can use \acrshort{5g} infrastructure with less capable and power-intensive hardware. 
 
-\subsection{Sidelink enhancements}\label{subsec:sidelink}
+\subsection{NR Sidelink}\label{subsec:sidelink}
 \acrshort{nr} Sidelink is based on LTE Sidelink and enables \acrfull{d2d} communication instead of \acrfull{n2d} communication for \acrshort{ue}.
-Therefore \acrshort{nr} Sidelink enables Distributed Networking as well as mobile \enquote{Distributed Base Stations}.
+Therefore \acrshort{nr} Sidelink enables Distributed Networking as well as mobile \enquote{Distributed Base Stations} \citep{3gpp17}.
 This means that parts of the functions of a \acrshort{bs}, such as connection management, are handled by the \acrshort{ue}.
 \acrlong{d2d} also enables chained connections where devices act as deputy \acrlong{bs}s, which improves capabilities for fast construction of networks, e.g. for emergency services like fire departments on duty.
 
@@ -505,18 +523,83 @@ It is possible to use \acrshort{nr} Sidelink connections for all \acrlong{ue}, b
 It decreases the power consumption of the \acrshort{bs} by \textbf{not} going through the \acrshort{bs}.
 
 \subsection{Sleep Modes}\label{subsec:sleep}
+Lastly, smart usage of sleep modes has the potential of saving energy by shutting off parts of a \acrshort{bs}'s hardware or software.
+For the purpose of decreasing the environmental impact of a \acrshort{bs}, 5 different modes can be differentiated between: Active \acrshort{dl}, Active \acrshort{ul}, Microsleep/Idle, Light Sleep and Deep Sleep.
+Table~\ref{tab:sleeppower} compares the power usage of these modes relative to each other and the transition times from the sleep mode to active transition.
+It shows the great potential of sleep mode usage in power saving and compares it to the user experience through transmittion latency.
 
-\section{Conclusion}\label{sec:conclusion}
+\begin{table}[t]
+  \begin{tabular}{lcc}
+    Power State     & Relative power P & Total transition time T [ms] \\
+    \hline
+    Deep Sleep      & 1   & 50   \\
+    Light Sleep     & 25  & 6    \\
+    Microsleep/Idle & 55  & 0    \\
+    Active UL       & 110 & N.A. \\
+    Active DL       & 280 & N.A. \\
+  \end{tabular}
+  \caption{Relative power consumption (arbitrary units) and transition times to active transmission of sleep modes \citep{energymodeling}}\label{tab:sleeppower}
+\end{table}
+
+Figure~\ref{subfig:commtrafic} shows the traffic load of a \acrshort{bs} within a 24 hour window.
+It is clear that there is a great difference in demand for hardware and software between times with high traffic and times with low traffic.
+Figure~\ref{subfig:sleepmodes} shows the energy consumption of different sleep mode activation strategies (algorithms that determine when and which sleep modes is to be activated).
+Some strategies achieve more similarities to the actual traffic load.
+The problem with choosing a sleep mode activation strategy is the contrariness between saving energy whenever possible and decreasing latency for better user experience.
+Optimizing this problem is the greatest challenge as every powered off component saves power.
+
+\begin{figure}[ht]
+  \begin{subfigure}{\linewidth}
+    
+    \includegraphics[width=\linewidth]{img/CommTraffic.png}
+    \caption{Communication traffic in a heterogeneous cellular network \citep{EnergyOptimization}}\label{subfig:commtrafic}
+  \end{subfigure}
+  \begin{subfigure}{\linewidth}
+    
+    \includegraphics[width=\linewidth]{img/CommTrafficSleep.png}
+    \caption{Communication traffic in a heterogeneous cellular network \citep{EnergyOptimization}}\label{subfig:sleepmodes}
+  \end{subfigure}
+  \caption{}\label{fig:traffic}
+\end{figure}
+
+\section{Summary}\label{sec:conclusion}
 % Is the situation relevant to national power consumption?
 % Are there effective solutions to reduce power consumption?
 % Will this topic become more relevant in the future?
+% 4 important and relevant indicators of environmental impact: energy consumption, renewable energies, recycling rate and resource productivity
+% Germany: 44% renewable energy
+% Germany BSs: Maximum power consumption 1.1023146 TWh per year -> 0.224687% of the net national power consumption (0.19234% of production)
+% Germany UE: 616.85 GWh per year (382.8996 GWh of that by human-used devices)
+% AAU and AC are the biggest power consumers in a BS
+% Power consumption cannot be split by component very easily
+% Radio cell might range on the same level as the cpu or display by power consumption+
+% Giga-MIMO, NR-Light, RedCap NR, NR Sidelink and Sleep modes were presented
+% Sleep Modes activation strategies show the greatest potential without introducing new hardware innovation or standards
 
+In this paper, we have delved into the energy footprint of mobile communications in the 21\textsuperscript{st} century, focusing primarily on the context of Germany.
+This research reveals several key findings and implications that are worth summarizing and reflecting upon:
 
-\clearpage
+\begin{enumerate}
+  \item Environmental Footprint: By delineating relevant indicators for environmental footprint assessment, energy consumption and the share of renewable energies have been identified as crucial factors in evaluating the environmental impact of mobile communications.
+  The focus on these indicators underscores the need for sustainable energy practices in the mobile communication sector.
+  \item Energy Consumption and Production: The national energy data of Germany has been scrutinized  particularly emphasizing the production and consumption of electricity.
+  Notably, renewable energy sources have accounted for a significant portion of electricity production, on which mobile communications bases its renewable energy share.
+  \item Base Stations: The analysis of base stations underscores their energy demands.
+  The distribution of radio systems within base station sites and the average power consumption of \acrshort{aau}s, \acrshort{bbu}s, and \acrshort{ac} units provide insights into their operational dynamics and energy requirements.
+  \item User Equipment: Despite challenges in obtaining precise data, an estimation of the power consumption of user equipment has been attempted, considering both human-used devices and \acrshort{m2m} communication devices.
+  While uncertainties persist, our analysis sheds light on the overall energy consumption associated with user equipment.
+  \item Opportunities for Energy Saving: We have outlined potential avenues for energy conservation in mobile communications infrastructure and devices.
+  Strategies such as optimizing power consumption during low-traffic periods, e.g. through the smart usage of sleep modes, and enhancing the efficiency of base station components present tangible opportunities for reducing energy consumption and minimizing environmental impact.
+  \item Future Directions: Moving forward, there is a pressing need for continued research and action to address the energy footprint of mobile communications.
+  Future studies could explore innovative technologies and policies aimed at further reducing energy consumption, increasing the integration of renewable energy sources, and promoting sustainable practices throughout the mobile communication ecosystem.
+\end{enumerate}
+
+In conclusion, This examination of the energy footprint of mobile communications underscores the complex interplay between technological advancements, energy consumption, and environmental impact.
+By fostering collaboration among stakeholders and prioritizing sustainability, we can work towards a more energy-efficient and environmentally responsible mobile communication landscape in the 21\textsuperscript{st} century and beyond.
 
 \appendix
 \glsaddall
-\printnoidxglossary[type=\acronymtype,nonumberlist]
+\printnoidxglossary[type=\acronymtype,nonumberlist,style=long]
 
 % \nocite{*}
 \renewcommand*{\refname}{\section{References}}
