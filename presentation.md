@@ -700,7 +700,7 @@ Hier sehen wir nochmal das, worüber ich vor einigen Wochen schon mal gesprochen
 ## Sleep Modes
 
 ![h:500 center](bilder/CommTrafficSleep.png)
-<!-- _footer: '[15]' -->
+<!-- _footer: '[14]' -->
 <!--
 Und hier sehen wir ein paar Kombinationen an Sleep Mode Strategien und deren Stromverbrauch über die gleichen 24h hinweg.
 
@@ -768,7 +768,6 @@ _paginate: skip
 [12] ["How will sidelink bring a new level of 5G versatility?", Qualcomm, 08.09.2022, https://www.qualcomm.com/news/onq/2022/09/how-will-sidelink-bring-a-new-level-of-5g-versatility](https://www.qualcomm.com/news/onq/2022/09/how-will-sidelink-bring-a-new-level-of-5g-versatility)
 [13] Dynamic gNodeB Sleep Control for Energy-Conserving 5G Radio Access Network; Pengfei Shen et al., 13.07.2022
 [14] Energy consumption optimization of 5G base stations considering variable threshold sleep mechanism; August 2023; Xiaoyan Ma et al.; Science Direct, Volume 9, Supplement 6
-[15] Energy consumption optimization of 5G base stations considering variable threshold sleep mechanism; August 2023; Xiaoyan Ma et al.; Science Direct, Volume 9, Supplement 6
 
 ---
 
