@@ -32,6 +32,10 @@ style: |
   section.smalltable table {
     font-size: 0.8em;
   }
+
+  section.small p {
+    font-size: 0.6em
+  }
 ---
 
 <!--
@@ -44,6 +48,7 @@ _footer: ''
 *Spezielle Themen Mobiler Kommunikationssysteme*
 *Andreas Nicklaus*
 
+[andreasnicklaus.github.io/mobcom-energy](https://andreasnicklaus.github.io/mobcom-energy/)
 
 <!--
 
@@ -73,8 +78,8 @@ a.k.a.:
 2. Zahlen und Fakten zum Stromverbrauch
 3. Wir verteilen sich die Zahlen?
 4. Dieses Seminar: Spezielle Entwicklungen in der Mobilkommunikation im Themenbereich
-
  -->
+
 --- 
 
 # 1. Was ist Umweltbelastung?
@@ -102,7 +107,7 @@ Was zählt alles dazu außer der Kohlendioxidaustoß?
 |                          |                        | Flächenverbrauch​             |
 |                          |                        | Altlasten​                    |
 
-<!-- _footer: '["Alle Umweltindikatoren auf einen Blick", Bayerisches Landesamt für Umwelt, https://www.lfu.bayern.de/umweltdaten/indikatoren/liste_indikatoren/index.htm](https://www.lfu.bayern.de/umweltdaten/indikatoren/liste_indikatoren/index.htm)' -->
+<!-- _footer: '[1]' -->
 
 <!-- 
 Das Bayerische Landesamt für Umwelt hat unsere Arbeit dahingehend getan, dass sie 27 Indikatoren für die Umweltbelastung festgelegt haben.
@@ -148,7 +153,7 @@ Altlasten sind grob bleibende Schäden nach der Bebauung, hängen also eng mit d
 
 > Für den Betrieb einer Funkstation auf dem Dach werden etwa **10 m²** Technikstellfläche, für einen Mast ungefähr **150 m²** Grundfläche bzw. Technikstellfläche benötigt.
 
-<!-- _footer: '["Mobilfunkausbau unterstützen - Antennenstandort anbieten", Deutsche Funkturm, https://www.dfmg.de/de/ihr-standortangebot-an-uns/anmietung-von-flaechen.html](https://www.dfmg.de/de/ihr-standortangebot-an-uns/anmietung-von-flaechen.html)' -->
+<!-- _footer: '[2]' -->
 
 <!-- 
 Wie sieht die Baufläche für eine Base Station aus?
@@ -187,7 +192,7 @@ Ressourcenproduktivität = erzielte Wirtschaftsleistung pro eingesetzter Ressour
 
 ## Ressourcenproduktivität seit 1991
 ![h:500 center](bilder/Ressourcenproduktivität-DE.png)
-<!-- _footer: '["Ressourcenproduktivität", Bayerisches Landesamt für Umwelt, https://www.lfu.bayern.de/umweltdaten/indikatoren/ressourcen_effizienz/ressourcenproduktivitaet/index.htm](https://www.lfu.bayern.de/umweltdaten/indikatoren/ressourcen_effizienz/ressourcenproduktivitaet/index.htm)' -->
+<!-- _footer: '[3]' -->
 
 <!-- 
 Was ist Ressourcenproduktivität
@@ -214,10 +219,7 @@ Mir hat das nichts gesagt und es sagt auch als absoluter Wert nichts aus, sonder
   - Wiederaufbereitung oder Repurposing
   - 40% der Produktionskosten bei Wiederaufbereitung
 
-<!-- _footer: '
-["How Long Do Lithium-Ion Batteries Last?", Li Time, 8.5.2023, https://www.litime.com/blogs/blogs/how-long-do-lithium-ion-batteries-last](https://www.litime.com/blogs/blogs/how-long-do-lithium-ion-batteries-last)
-
-[Toward Sustainable Reuse of Retired Lithium-ion Batteries from Electric Vehicles, Conservation and Recycling, Volume 168, 2021, Yang et al.](https://linkinghub.elsevier.com/retrieve/pii/S0921344920305644)'  -->
+<!-- _footer: '[4, 5]'  -->
 
 <!-- 
 Wenn wir über die Batterien in next generation Base Stations sprechen, dann über die Leistung, was wir gleich vergleichen werden, aber insbesondere über die Lebensdauer und Wiederverwendung.
@@ -259,7 +261,7 @@ ca. 1000 €
 | Wh/l  |             600-750             |            450             |         250-300         |
 
 
-<!-- _footer: '"Muss es Lithium sein?", c´t 2023, Heft 26, Heise Medien, ISSN 0724-8679' -->
+<!-- _footer: '[6]' -->
 
 <!-- 
 Alternativen für LiFePO4-Batterien:
@@ -275,14 +277,14 @@ Alternativen für LiFePO4-Batterien:
 
 - 240/400-Volt-Stromanschluss (3 kW)
 
-- 14 200 Standorte mit > 43 000 Antennen
+- 14 200 Standorte mit > 43 000 Antennen **NICHT RICHTIG! 41945 Standorte (2022)**
 - \>50% der Mobilfunkstationen haben 5G-Technologien
 
 :arrow_right: $50\% * 14 200 \space \textrm{Standorte} * 3\frac{kW}{\textrm{Standort}} = 21,3 MW$
 
 :arrow_right: $650 \frac{Wh}{l} / 3 kW = 13 \frac{\textrm{min}}{l}; \quad 250 \frac{Wh}{k} / 3 kW = 5 \frac{\textrm{min}}{kg}$
 
-<!-- _footer: '["Ausbau des 5G-Netzes schreitet weiter voran. 5G jetzt für 90% der Bevölkerung", Newsroom Vodafone, 20.08.2023, https://newsroom.vodafone.de/netz/mobilfunk-netzausbau-5g-netz-fur-90-prozent-der-bevolkerung](https://newsroom.vodafone.de/netz/mobilfunk-netzausbau-5g-netz-fur-90-prozent-der-bevolkerung)' -->
+<!-- _footer: '[7]' -->
 
 <!-- 
 Strom in den Batterien -> Stromverbrauch einer gNB Basis Station
@@ -305,7 +307,7 @@ Indikatoren: Energieverbrauch und Erneuerbare Energien
 
 ## Erneuerbare Stromerzeugung in Deutschland
 ![h:400 center](bilder/bruttostromerzeugung-erneuerbare-energien.png)
-<!-- _footer: '["Bruttostromerzeugung 2022", Statistisches Bundesamt (Destatis), https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Energie/_Grafik/_Interaktiv/bruttostromerzeugung-erneuerbare-energien.html](https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Energie/_Grafik/_Interaktiv/bruttostromerzeugung-erneuerbare-energien.html)' -->
+<!-- _footer: '[8]' -->
 
 **Veraltet!** Bruttostromerzeugung im [3. Quartal 2023](https://www.destatis.de/DE/Presse/Pressemitteilungen/2023/12/PD23_462_43312.html)
 
@@ -373,7 +375,7 @@ _class: centered
 
 ## Was heißt das für uns?
 
-![h:300 center](https://media.licdn.com/dms/image/C5612AQFoIvbgA_brMw/article-cover_image-shrink_423_752/0/1621725087228?e=1709164800&v=beta&t=3BrtyZypIwxxvJ9SHlnswejemY00yO16gIlaJ6LjJFk)
+![h:300 center](bilder/iDontKnow.png)
 
 Hier fehlen verlässliche Zahlen der Branche, Energieverbrauch des User Equipments und Effizienzrechnung $\frac{\textrm{Transmit Power}}{\textrm{Power Consumption}}$
 
@@ -397,7 +399,7 @@ Hier fehlen verlässliche, also einheitliche Zahlen, UE, und Trasmit-Power/Power
 
 In 5G: RRU und Antennensysteme sind Active Antenna Units (AAU) und BBUs sind Centralized Units (CU) und Distributed (DU).
 
-<!-- _footer: '["What is Base Station?", IPLOOK, 2023, https://www.iplook.com/info/what-is-base-station-i00169i1.html](https://www.iplook.com/info/what-is-base-station-i00169i1.html)' -->
+<!-- _footer: '[9]' -->
 
 <!-- 
 Stattdessen können wir uns darüber unterhalten, aus welchen Bauteilen eine Base Station besteht:
@@ -426,7 +428,7 @@ In 5G sind wegen der Veränderungen der Begriffe und der Feingranularität der S
 | Baseband Units (BBU)       | 295-325W       | 295-320W | 295-320W   |
 | Air Conditioning           | 1740W          | 1740W    | 1740W      |
 
-<!-- _footer: '["Remake Green 5G, Mobile Innovation for Climate Action", China Telecom and ZTE, https://www.zte.com.cn/content/dam/zte-site/res-www-zte-com-cn/white_paper/Remake_Green_5G.pdf](https://www.zte.com.cn/content/dam/zte-site/res-www-zte-com-cn/white_paper/Remake_Green_5G.pdf)' -->
+<!-- _footer: '[10]' -->
 
 <!-- 
 Was davon verbraucht viel Strom?
@@ -445,7 +447,7 @@ BBUs und Air Conditioning sind im Deep Sleep Modus der absolute Killer mit schli
 
 ![h:500 center](bilder/EnergyConsumptionOf5GEquipment.png)
 
-<!-- _footer: '["Remake Green 5G, Mobile Innovation for Climate Action", China Telecom and ZTE, https://www.zte.com.cn/content/dam/zte-site/res-www-zte-com-cn/white_paper/Remake_Green_5G.pdf](https://www.zte.com.cn/content/dam/zte-site/res-www-zte-com-cn/white_paper/Remake_Green_5G.pdf)' -->
+<!-- _footer: '[10]' -->
 
 <!-- 
 Hier sehen wir nochmal die Leistung nach Traffic Load etwas feingranularer.
@@ -545,7 +547,7 @@ FDD: Frequency Division Duplex
 TDD: Time Division Duplex
  -->
 
-<!-- _footer: '["What is reduced capability (RedCap) NR and what will it achieve?", Ericsson, 11.02.2021, https://www.ericsson.com/en/blog/2021/2/reduced-cap-nr](https://www.ericsson.com/en/blog/2021/2/reduced-cap-nr)' -->
+<!-- _footer: '[11]' -->
 
 ---
 
@@ -553,7 +555,7 @@ TDD: Time Division Duplex
 
 ![h:450 center](https://www.ericsson.com/cdn-cgi/image/format=auto,fit=scale-down,width=1440/4911c1/assets/global/qbank/2021/02/11/illustration-of-the-difference-1286077012acc7855968aca64357cb774bc6e6.jpg)
 
-<!-- _footer: '["What is reduced capability (RedCap) NR and what will it achieve?", Ericsson, 11.02.2021, https://www.ericsson.com/en/blog/2021/2/reduced-cap-nr](https://www.ericsson.com/en/blog/2021/2/reduced-cap-nr)' -->
+<!-- _footer: '[11]' -->
 
 <!-- 
 [Graphische Darstellung von Kommunikation eines RedCapUE und eines Legacy UE]
@@ -581,7 +583,7 @@ QAM: Quadrature amplitude modulation
 - Kleinere Konstellationsmatrizen für Modulierung
 - Optionaler Duplex
 
-<!-- _footer: '["What is reduced capability (RedCap) NR and what will it achieve?", Ericsson, 11.02.2021, https://www.ericsson.com/en/blog/2021/2/reduced-cap-nr](https://www.ericsson.com/en/blog/2021/2/reduced-cap-nr)' -->
+<!-- _footer: '[11]' -->
 
 <!-- 
 Aus diesem technischen Schritt, den das UE entscheiden kann können wir die Ressourcen, die wir haben in kleinere Stücke für mehr Geräte und Verbindungen teilen.
@@ -601,7 +603,7 @@ Wir haben also
 - Device-to-Device (D2D) Kommunikation
 - Distributed Networking - "Distributed Base Stations"
 
-<!-- _footer: '["How will sidelink bring a new level of 5G versatility?", Qualcomm, 08.09.2022, https://www.qualcomm.com/news/onq/2022/09/how-will-sidelink-bring-a-new-level-of-5g-versatility](https://www.qualcomm.com/news/onq/2022/09/how-will-sidelink-bring-a-new-level-of-5g-versatility)' -->
+<!-- _footer: '[12]' -->
 
 <!-- 
 Jetzt kommen wir zu meinem absoluten Favourite der Themen
@@ -617,7 +619,7 @@ Jetzt kommen wir zu meinem absoluten Favourite der Themen
 
 ![center](https://s7d1.scene7.com/is/image/dmqualcommprod/Picture3-2?$QC_Responsive$&fmt=png-alpha&wid=640)
 
-<!-- _footer: '["How will sidelink bring a new level of 5G versatility?", Qualcomm, 08.09.2022, https://www.qualcomm.com/news/onq/2022/09/how-will-sidelink-bring-a-new-level-of-5g-versatility](https://www.qualcomm.com/news/onq/2022/09/how-will-sidelink-bring-a-new-level-of-5g-versatility)' -->
+<!-- _footer: '[12]' -->
 
 <!-- 
 [Graphik von Qualcomm erklären]
@@ -635,7 +637,7 @@ Jetzt kommen wir zu meinem absoluten Favourite der Themen
 - Vergrößerte Kapazität
 - Data Offload
 
-<!-- _footer: '["How will sidelink bring a new level of 5G versatility?", Qualcomm, 08.09.2022, https://www.qualcomm.com/news/onq/2022/09/how-will-sidelink-bring-a-new-level-of-5g-versatility](https://www.qualcomm.com/news/onq/2022/09/how-will-sidelink-bring-a-new-level-of-5g-versatility)' -->
+<!-- _footer: '[12]' -->
 
 <!-- 
 in 5G neu:
@@ -651,7 +653,7 @@ in 5G neu:
 ## Sleep Modes
 
 ![h:500 center](bilder/SleepModesTransitions.png)
-<!-- _footer: Dynamic gNodeB Sleep Control for Energy-Conserving 5G Radio Access Network; Pengfei Shen et al., 13.07.2022 -->
+<!-- _footer: '[13]' -->
 
 <!-- 
 Zu guter letzt will ich noch kurz das Problem und die Möglichkeiten von Sleep Modes ansprechen, bevor wir in eine Fragerunde übergehen
@@ -672,7 +674,7 @@ Die Transition Times und Unterschiede im Power lassen mich vermuten, dass es da 
 ## Sleep Modes
 
 ![h:500 center](bilder/SleepModeSwitching.png)
-<!-- _footer: Dynamic gNodeB Sleep Control for Energy-Conserving 5G Radio Access Network; Pengfei Shen et al., 13.07.2022 -->
+<!-- _footer: '[13]' -->
 
 <!-- 
 Diese Graphik von 2022 zeigt das tatsächliche Ausmaß von Switching Policies, sogar mit eingerechneter Switching Power von 20W
@@ -685,7 +687,7 @@ Der Unterschied ist, wenn ich erlich bin, ernüchternd. Wir reden von einem Fakt
 ### Täglicher Traffic
 
 ![h:500 center](bilder/CommTraffic.png)
-<!-- _footer: Energy consumption optimization of 5G base stations considering variable threshold sleep mechanism; August 2023; Xiaoyan Ma et al.; Science Direct, Volume 9, Supplement 6 -->
+<!-- _footer: '[14]' -->
 
 <!-- 
 Ein anderes Paper von August 0223, das ich mir zur Hand genommen habe, nimmt den Tagesverlauf als entscheidende Graphik.
@@ -698,7 +700,7 @@ Hier sehen wir nochmal das, worüber ich vor einigen Wochen schon mal gesprochen
 ## Sleep Modes
 
 ![h:500 center](bilder/CommTrafficSleep.png)
-<!-- _footer: Energy consumption optimization of 5G base stations considering variable threshold sleep mechanism; August 2023; Xiaoyan Ma et al.; Science Direct, Volume 9, Supplement 6 -->
+<!-- _footer: '[15]' -->
 <!--
 Und hier sehen wir ein paar Kombinationen an Sleep Mode Strategien und deren Stromverbrauch über die gleichen 24h hinweg.
 
@@ -738,6 +740,35 @@ _paginate: skip
 | FTSS      | Fixed threshold sleep strategy                      |
 | MTRS      | Maximum transmission rate user association strategy |
 | QAM       | Quadrature amplitude modulation                     |
+
+---
+
+<!-- _class: small -->
+
+# Literaturverzeichnis (1/2)
+
+[1] ["Alle Umweltindikatoren auf einen Blick", Bayerisches Landesamt für Umwelt, https://www.lfu.bayern.de/umweltdaten/indikatoren/liste_indikatoren/index.htm](https://www.lfu.bayern.de/umweltdaten/indikatoren/liste_indikatoren/index.htm)
+[2] ["Mobilfunkausbau unterstützen - Antennenstandort anbieten", Deutsche Funkturm, https://www.dfmg.de/de/ihr-standortangebot-an-uns/anmietung-von-flaechen.html](https://www.dfmg.de/de/ihr-standortangebot-an-uns/anmietung-von-flaechen.html)
+[3] ["Ressourcenproduktivität", Bayerisches Landesamt für Umwelt, https://www.lfu.bayern.de/umweltdaten/indikatoren/ressourcen_effizienz/ressourcenproduktivitaet/index.htm](https://www.lfu.bayern.de/umweltdaten/indikatoren/ressourcen_effizienz/ressourcenproduktivitaet/index.htm)
+[4] ["How Long Do Lithium-Ion Batteries Last?", Li Time, 8.5.2023, https://www.litime.com/blogs/blogs/how-long-do-lithium-ion-batteries-last](https://www.litime.com/blogs/blogs/how-long-do-lithium-ion-batteries-last)
+[5] [Toward Sustainable Reuse of Retired Lithium-ion Batteries from Electric Vehicles, Conservation and Recycling, Volume 168, 2021, Yang et al.](https://linkinghub.elsevier.com/retrieve/pii/S0921344920305644)
+[6] "Muss es Lithium sein?", c´t 2023, Heft 26, Heise Medien, ISSN 0724-8679
+[7] ["Ausbau des 5G-Netzes schreitet weiter voran. 5G jetzt für 90% der Bevölkerung", Newsroom Vodafone, 20.08.2023, https://newsroom.vodafone.de/netz/mobilfunk-netzausbau-5g-netz-fur-90-prozent-der-bevolkerung](https://newsroom.vodafone.de/netz/mobilfunk-netzausbau-5g-netz-fur-90-prozent-der-bevolkerung)
+[8] ["Bruttostromerzeugung 2022", Statistisches Bundesamt (Destatis), https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Energie/_Grafik/_Interaktiv/bruttostromerzeugung-erneuerbare-energien.html](https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Energie/_Grafik/_Interaktiv/bruttostromerzeugung-erneuerbare-energien.html)
+
+---
+
+<!-- _class: small -->
+
+# Literaturverzeichnis (2/2)
+
+[9] ["What is Base Station?", IPLOOK, 2023, https://www.iplook.com/info/what-is-base-station-i00169i1.html](https://www.iplook.com/info/what-is-base-station-i00169i1.html)
+[10] ["Remake Green 5G, Mobile Innovation for Climate Action", China Telecom and ZTE, https://www.zte.com.cn/content/dam/zte-site/res-www-zte-com-cn/white_paper/Remake_Green_5G.pdf](https://www.zte.com.cn/content/dam/zte-site/res-www-zte-com-cn/white_paper/Remake_Green_5G.pdf)
+[11] ["What is reduced capability (RedCap) NR and what will it achieve?", Ericsson, 11.02.2021, https://www.ericsson.com/en/blog/2021/2/reduced-cap-nr](https://www.ericsson.com/en/blog/2021/2/reduced-cap-nr)
+[12] ["How will sidelink bring a new level of 5G versatility?", Qualcomm, 08.09.2022, https://www.qualcomm.com/news/onq/2022/09/how-will-sidelink-bring-a-new-level-of-5g-versatility](https://www.qualcomm.com/news/onq/2022/09/how-will-sidelink-bring-a-new-level-of-5g-versatility)
+[13] Dynamic gNodeB Sleep Control for Energy-Conserving 5G Radio Access Network; Pengfei Shen et al., 13.07.2022
+[14] Energy consumption optimization of 5G base stations considering variable threshold sleep mechanism; August 2023; Xiaoyan Ma et al.; Science Direct, Volume 9, Supplement 6
+[15] Energy consumption optimization of 5G base stations considering variable threshold sleep mechanism; August 2023; Xiaoyan Ma et al.; Science Direct, Volume 9, Supplement 6
 
 ---
 
